@@ -2,11 +2,12 @@ version: '3'
 
 services:
   web:
-    build: ../web
+    image: php:apache
+    build: ./web
     ports:
       - "80:80"
     volumes:
-      - ../web/public:/var/www/html
+      - ./web:/var/www/html
     depends_on:
       - db
   db:
@@ -17,10 +18,12 @@ services:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: project_u
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./db/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
   adminer:
     image: adminer
     restart: always
     ports:
-      - 2000:8080
+      - "2000:8080"
