@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Caja de Ahorro</title>
-</head>
+session_start();
 
-<body>
-    <h1><? echo 'Hey!' ?></h1>
-</body>
+require '../app/core/init.php';
 
-</html>
+$app = new App;
+$app->loadController();
