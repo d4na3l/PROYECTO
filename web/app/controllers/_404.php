@@ -2,8 +2,8 @@
 
 class _404 extends Controller
 {
-    public function index()
+    public function index($main, $param)
     {
-        echo '404 controller page';
+        $this->view($main);
     }
 }

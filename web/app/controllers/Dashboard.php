@@ -2,8 +2,12 @@
 
 class Dashboard extends Controller
 {
-    public function index()
+    public function index($main, $param)
     {
-        $this->view('dashboard');
+        if ($param) {
+            $this->view($main . '/' . $param);
+        }else {
+            $this->view($main);
+        }
     }
 }
