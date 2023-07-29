@@ -8,6 +8,8 @@ class App
     private function splitURL()
     {
         $URL = $_GET['url'] ?? 'home';
+        $URL = $URL ?? 'home';
+        $URL = htmlspecialchars(trim($URL), ENT_QUOTES, 'UTF-8');
         $URL = explode("/", $URL);
         return $URL;
     }
