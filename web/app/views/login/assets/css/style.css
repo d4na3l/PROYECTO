@@ -1,0 +1,179 @@
+/* ==================== VARIABLES CSS ================== */
+:root{
+    --header-height: 3rem;
+
+    /*============== Colores =================*/
+    /* Cambio de colores*/
+    --hue-color: 220; /*Morado 250 - Verde 142(500) - Azul 210 - Rosado 340 - Salmon 0 */
+
+    /* Colores modo HSL */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 90%, 50%);
+    --container-color: rgba(228, 228, 228, 0.726);
+
+    /*==================== Font and typography ====================*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*==================== Font height ====================*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*==================== Margenes bottom ====================*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*==================== Z index ====================*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-model: 1000;
+}
+
+@media screen and (min-width: 968px){
+    :root{
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*====================== BASE ======================*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background: linear-gradient(var(--first-color-lighter), var(--first-color-second));
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    color: var(--text-color);
+}
+
+h1{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+/*==================== REUSABLE CSS CLASSES ====================*/
+.section{
+    display: flex;
+    justify-content: center;
+}
+
+.section__title{
+    font-size: var(--h1-font-size);
+    margin: var(--mb-0-75);
+}
+
+.section__title, .section__subtitle{
+    text-align: center;
+}
+
+/*==================== LAYAOUT ====================*/
+.container{
+    margin-top: 10rem;
+    width: 25rem;
+    height: auto;
+    background-color: var(--container-color);
+    border-radius: .5rem;
+    display: grid;
+    justify-content: center;
+}
+
+.usuario{
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.usuario .form{
+    height: 2rem;
+    width: 20rem;
+    padding: 1.25rem .5rem;
+    font-size: var(--h3-font-size);
+    border-radius: .5rem;
+    border-style: none;
+    margin-bottom: var(--mb-0-25);
+}
+
+.container .boton{
+    text-decoration: none;
+    cursor: pointer;
+    height: auto;
+    width: 20rem;
+	padding: .75rem .5rem;
+	border-radius: 2rem;
+	background: var(--first-color);
+	border-style: none;
+	font-size: var(--h3-font-size);
+	transition: .25s;
+    color: white;
+    margin: var(--mb-0-75);
+}
+
+.container .boton:hover{
+    background: var(--first-color-alt);
+}
+
+.animacion{
+    animation: slide 2s;
+}
+
+@keyframes slide {
+    0% {transform: translateY(1rem);
+    color: transparent;
+    background-color: transparent;}
+    100% {transform: translateY(0);}
+}
+
+@media screen and (max-width: 920px){
+    .container{
+        margin-top: 5rem;
+    }    
+}
+
+@media screen and (max-width: 360px){
+    .container{
+        width: 14rem;
+        height: auto;
+    }
+
+    .container .boton{
+        width: 12rem;
+    }
+
+    .usuario .form{
+        width: 12rem;
+    }
+}
