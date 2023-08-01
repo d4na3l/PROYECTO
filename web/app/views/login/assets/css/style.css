@@ -101,19 +101,19 @@ h1{
 }
 
 /*==================== LAYAOUT ====================*/
-.logo{
-    width: 25vw;
-    height: auto;
-}
-
 .container{
-    margin-top: 30vh;
+    margin-top: 25vh;
     width: 25rem;
     height: auto;
     background-color: var(--container-color);
     border-radius: .5rem;
     display: grid;
     justify-content: center;
+}
+
+.logo{
+    width: 25vw;
+    height: auto;
 }
 
 .usuario{
