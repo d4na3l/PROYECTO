@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="assets/img/logo.png">
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="icon" href="../assets/img/logo.png">
     <title>Login</title>
 </head>
 <body>
     <div class="section">
         <div class="container container-hidden animation-left">
-            <img class="logo" src="assets/img/logo.png" alt="Logo institucional">
+            <img class="logo" src="../assets/img/logo.png" alt="Logo institucional">
         </div>
         <div class="container animation-right">
         <h1 class="section__title animation-right">Login</h1>
