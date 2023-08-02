@@ -1,6 +1,6 @@
 RewriteEngine On
 
-#acept loading of actual files and directories
+#accept loading of actual files and directories
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
