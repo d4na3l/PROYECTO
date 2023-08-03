@@ -1,6 +1,8 @@
+# Este archivo redirige todos los enrutamientos exisntentes o no existentes a Index.php que esta en este mismo acceso.
+
 RewriteEngine On
 
-#accept loading of actual files and directories
+# accept loading of actual files and directories
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
