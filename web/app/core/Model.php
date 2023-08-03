@@ -1,17 +1,19 @@
 <?php
-
+// Trait model, básicamente qué consultas podrán hacer, por ahora, los diferentes modelos a la base de datos.
 trait Model
 {
     use Database;
 
     protected $order = 'id';
 
+    // Lee y retorna todos los datos de la base de datos de la tabla correspondiente en orden de id.
     function read()
     {
         $query = 'SELECT * FROM  "' . $this->table . '" ORDER BY "' . $this->order . '"';
         return $this->query($query);
     }
 
+    // Extrae las coincidencias.
     public function where($data, $data_not = [])
     {
         $keys = array_keys($data);
@@ -30,6 +32,7 @@ trait Model
         return $this->query($query, $data);
     }
 
+    // Extrae la primera de las coincidencias.
     public function first($data, $data_not = [])
     {
         $keys = array_keys($data);
@@ -53,8 +56,10 @@ trait Model
         return false;
     }
 
+    // Inserta datos dentro de la base de datos
     public function insert($data)
     {
+        // Verificamos que sean datos que se pueden manipular
         if (!empty($this->allowedColums)) {
             foreach ($data as $key => $value) {
                 if (!in_array($key, $this->allowedColums)) {
@@ -72,8 +77,10 @@ trait Model
         return false;
     }
 
+    // Actualiza datos dentro de la base de datos
     public function update($id, $data, $id_column = 'id')
     {
+        // Verificamos que sean datos que se pueden manipular
         if (!empty($this->allowedColums)) {
             foreach ($data as $key => $value) {
                 if (!in_array($key, $this->allowedColums)) {
