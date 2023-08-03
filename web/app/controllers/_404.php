@@ -3,11 +3,8 @@
 class _404 extends Controller
 {
     // Metodo para seleccinar la vista enseñarla. Como solo hay una, debería reducir la cantidad de código en el controlador.
-    public function index($section, $param)
+    public function index()
     {
-        $section = preg_replace('/[^a-zA-Z0-9\/_-]/', '', $section);
-        $viewPath = $section;
-
-        $this->view($viewPath);
+        $this->view('404');
     }
 }
