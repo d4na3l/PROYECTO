@@ -1,20 +1,15 @@
 <?php
-
+// Controlador para acceder a las vistas pertenecientes al home. Aunque esta vista me parece innecesaria.
 class Home extends Controller
 {
-    public function index($section, $param)
+    // Método para cargar la vista de coincidencia
+    public function index($section)
     {
-        $model = new Model;
-        $model->test();
-        
+        // Depuracion de los caracteres que se le pasan a la url.
         $section = preg_replace('/[^a-zA-Z0-9\/_-]/', '', $section);
-
         $viewPath = $section;
-        if ($param) {
-            $param = preg_replace('/[^a-zA-Z0-9\/_-]/', '', $param);
-            $viewPath .= '/' . $param;
-        }
 
+        // Llamado al método view para cargar la vista, de la clase controller.
         $this->view($viewPath);
     }
 }

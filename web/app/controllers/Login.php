@@ -1,6 +1,6 @@
 <?php
 // Controlador para acceder a las vistas pertenecientes al dashboard
-class Dashboard extends Controller
+class Login extends Controller
 {
     // Metodo para seleccinar la vista enseñarla.
     public function index($section, $param)

@@ -1,18 +1,10 @@
 <?php
-
+// Controlador para las vistas no existentes.
 class _404 extends Controller
 {
-    public function index($section, $param)
+    // Metodo para seleccinar la vista enseñarla. Como solo hay una, debería reducir la cantidad de código en el controlador.
+    public function index()
     {
-
-        $section = preg_replace('/[^a-zA-Z0-9\/_-]/', '', $section);
-
-        $viewPath = $section;
-        if ($param) {
-            $param = preg_replace('/[^a-zA-Z0-9\/_-]/', '', $param);
-            $viewPath .= '/' . $param;
-        }
-
-        $this->view($viewPath);
+        $this->view('404');
     }
 }
