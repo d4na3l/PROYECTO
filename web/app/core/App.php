@@ -11,8 +11,8 @@ class App
     // Metodo para cortar la url, depurarla y retornar el fragmento de URL que se necesita para saber adonde enrutar.
     private function splitURL()
     {
-        $URL = $_GET['url'] ?? 'home';
-        $URL = $URL ?? 'home';
+        $URL = $_GET['url'] ?? 'login';
+        $URL = $URL ?? 'login';
         $URL = htmlspecialchars(trim($URL), ENT_QUOTES, 'UTF-8');
         $URL = explode("/", $URL);
         return $URL;

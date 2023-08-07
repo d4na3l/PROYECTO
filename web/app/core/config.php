@@ -13,5 +13,5 @@ if ($_SERVER['SERVER_NAME']  == 'localhost') {
     // Aqui se refine el routing a agregar en los archivos de caracter src.
     define('ROOT', 'http://localhost/public');
 } else {
-    define('ROOT', 'http://www.youwebsite.com');
+    define('ROOT', 'http://192.168.1.36/public');
 }

@@ -1,0 +1,156 @@
+/* ==================== VARIABLES CSS ================== */
+:root{
+    --header-height: 3rem;
+
+    /*============== Colores =================*/
+    /* Cambio de colores - Claros*/
+    --hue-color: 210; /*Morado 250 - Verde 142(500) - Azul 210 - Rosado 340 - Rojo 0 - Amarillo 50 */
+
+    /* Colores modo HSL (hue-color | intensidad | brillo) */ 
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 50%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 90%, 50%);
+    --container-color: rgba(228, 228, 228, .5);
+    --black-color: hsl(var(--hue-color), 0%, 0%);
+    --gray-color: hsl(var(--hue-color), 0%, 30%);
+
+    --hue-color-2: 210; /* Colores Oscuros */
+
+    --principal-color-2: hsl(var(--hue-color-2), 100%, 50%);
+    --first-color-2: hsl(var(--hue-color-2), 70%, 50%);
+    --first-color-lighter-2: hsl(var(--hue-color-2)30% 60%);
+    --body-color-2: hsl(var(--hue-color-2), 70%, 40%);
+
+    /*==================== Font and typography ====================*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*==================== Font height ====================*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*==================== Margenes bottom ====================*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*==================== Z index ====================*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-model: 1000;
+}
+
+@media screen and (min-width: 360px){
+    :root{
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*====================== BASE ======================*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+h1,h2,h3{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+/*==================== REUSABLE CSS CLASSES ====================*/
+.section__title{
+    font-size: var(--big-font-size);
+    margin-top: var(--mb-0-75);
+}
+
+.section__title, .section__subtitle{
+    text-align: center;
+}
+
+/*======================== LAYOUT NAVBAR ============================*/
+.navbar__section{
+    display: flex;
+    justify-content: space-between;
+    background: var(--body-color-2);
+}
+
+.navbar__backgrond-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar__brand-button{
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 6px 12px;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 32px;
+    border-style: none;
+    transition: .25s;
+}
+
+.navbar__brand{
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+}
+
+.navbar__brand-button:hover{
+    background-color: var(--first-color-2);
+}
+
+.navbar__menu{
+    height: 2.5rem;
+    width: auto;
+}
+
+.navbar__logo{
+    height: 3.5rem;
+    width: auto;
+}
+
+.navbar__title{
+    font-size: var(--h2-font-size);
+    margin-top: .75rem;
+    color: whitesmoke;
+}
+
+.navbar__img-user{
+    width: 3rem;
+    height: auto;
+    margin: .25rem .25rem;
+    cursor: pointer;
+}
