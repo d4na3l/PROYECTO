@@ -189,14 +189,11 @@ h1{
 
     .container{
         margin-top: 30vh;
+        margin-bottom: 32vh;
     }    
 }
 
 @media screen and (max-width: 360px){
-    .container-hidden{
-        display: none;
-    }
-    
     .container{
         width: 14rem;
         height: auto;
