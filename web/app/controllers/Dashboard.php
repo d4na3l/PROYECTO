@@ -5,6 +5,9 @@ class Dashboard extends Controller
     // Metodo para seleccinar la vista enseñarla.
     public function index($section, $param)
     {
+        if (empty($_GET['url'])) {
+            location('dashboard');
+        }
         // Section vendría siendo la primera parte de la URL, es decir la ruta principal.
         $section = preg_replace('/[^a-zA-Z0-9\/_-]/', '', $section);
 

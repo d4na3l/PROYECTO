@@ -17,10 +17,10 @@
         </div>
         <div class="container animation-right">
             <h1 class="section__title animation-right">Login</h1>
-            <form method="POST" action="#">
+            <form method="POST">
                 <div class="usuario">
-                    <input class="form animation-right-input" type="text" placeholder="Usuario">
-                    <input class="form animation-right-input" type="password" placeholder="Contraseña">
+                    <input class="form animation-right-input" name='ci' type="text" placeholder="Usuario">
+                    <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña">
                 </div>
                 <input type="submit" class="boton animation-right-input" value="Ingresar">
             </form>
