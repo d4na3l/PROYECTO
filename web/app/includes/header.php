@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/navbar.css">
@@ -29,12 +28,3 @@
             </div>
         </div>
     </nav>
-=======
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/dashboard.css">
-    <link rel="icon" href="<?= ROOT ?>/assets/img/logo.png">
-    <title>Dashboard</title>
-</head>
-
-<body>
->>>>>>> b14f2bf (fix: routingto asset was fixed; feat: login controller add, login view add, footer and header  was add)

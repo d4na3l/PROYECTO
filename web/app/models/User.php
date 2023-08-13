@@ -1,9 +1,9 @@
 <?php
 
-class User
+trait User
 {
     use Model;
-    protected $table = 'User';
+    protected $table = 'users';
 
     protected $allowedColums = [
         'ci',
