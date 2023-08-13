@@ -9,3 +9,16 @@ require '../app/core/init.php';
 // Llamamos a la clase App y su método Cargar controlador, para activar la aplicación y enseñar la primera vista.
 $app = new App;
 $app->loadController();
+
+/*----------------------------------------------
+
+[[FUNCIONALIDAD]]
+
+    Si tiene una sesion iniciada,
+        -> enviar al dashboard
+    Sino,
+        -> enviar al login */
+
+/*-------------------------------------------------
+
+Mientras no cumpla la funcion, redirige al login */

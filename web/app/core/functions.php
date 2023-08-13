@@ -7,3 +7,9 @@ function show($stuff)
     print_r($stuff);
     echo "</pre>";
 }
+
+function location($path)
+{
+    header('Location: ' . ROOT . '/' . $path);
+    exit;
+}
