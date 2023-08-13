@@ -5,12 +5,9 @@ class Dashboard extends Controller
     // Metodo para seleccinar la vista enseñarla.
     public function index($section, $param)
     {
-<<<<<<< HEAD
-=======
         if (empty($_GET['url'])) {
             location('dashboard');
         }
->>>>>>> chris
         // Section vendría siendo la primera parte de la URL, es decir la ruta principal.
         $section = preg_replace('/[^a-zA-Z0-9\/_-]/', '', $section);
 
@@ -23,10 +20,6 @@ class Dashboard extends Controller
         }
 
         // Llamamos al método view de la clase Controller
-<<<<<<< HEAD
-=======
-
->>>>>>> chris
         $this->view($viewPath);
     }
 }

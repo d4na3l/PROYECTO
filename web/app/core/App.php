@@ -4,11 +4,7 @@
 class App
 {
     // Por defecto, llama al controlador de Home.
-<<<<<<< HEAD
-    private $controller = 'Home';
-=======
     private $controller = 'dashboard';
->>>>>>> chris
     // Por defecto, llama al método index.
     private $method     = 'index';
 
@@ -30,15 +26,6 @@ class App
         $params = trim(implode('/', $URL), '/') ?? null;
 
         // Comprobamos si existe el controlador, primeramente.
-<<<<<<< HEAD
-        $filename = "../app/controllers/" . ucfirst($URL[0]) . ".php";
-        if (file_exists($filename)) {
-            // Cargamos el controlador.
-            require $filename;
-
-            // Asignamos el controlador por defecto, al controlador de la coincidencia del archivo.
-            $this->controller = ucfirst($URL[0]);
-=======
         $filename = "../app/controllers/" . ucfirst($main) . ".php";
         if (file_exists($filename)) {
             // Cargamos el controlador.
@@ -57,27 +44,15 @@ class App
                     $this->method = 'logout';
                 }
             }
->>>>>>> chris
         } else {
 
             $filename = "../app/controllers/_404.php";
             require $filename;
             $this->controller = '_404';
         }
-<<<<<<< HEAD
-
-        // Llamamos al controlador con la clase de la coincidencia, como el método de los controladores solo existe el index para extraer las vistas, no hay lógica para cambiar de método.
-        $controller = new $this->controller;
-        // Comprobamos si existen subrutas.
-        $param = $URL[1] ?? null;
-
-        // Llamamos a la clase de la coincidencia, con el método de "coincidencia", con los parámetros extraídos, por ahora, de la URL
-        call_user_func_array([$controller, $this->method], [$URL[0], $param]);
-=======
         // Llamamos al controlador con la clase de la coincidencia, como el método de los controladores solo existe el index para extraer las vistas, no hay lógica para cambiar de método.
         $controller = new $this->controller;
         // Llamamos a la clase de la coincidencia, con el método de "coincidencia", con los parámetros extraídos, por ahora, de la URL
         call_user_func_array([$controller, $this->method], [$main, $params]);
->>>>>>> chris
     }
 }
