@@ -10,6 +10,6 @@ trait User
         'name',
         'last_name',
         'email',
-        'password',
+        'password'
     ];
 }
