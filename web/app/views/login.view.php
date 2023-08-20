@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/login.css">
     <link rel=" icon" href="<?= ROOT ?>/assets/img/logo.png">
     <title>CM Chacao - Login</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,15 +18,16 @@
         </div>
         <div class="container animation-right">
             <h1 class="section__title animation-right">Login</h1>
-            <form method="POST">
+            <form id="loginForm" method="POST" autocomplete='off'>
                 <div class="usuario">
-                    <input class="form animation-right-input" name='ci' type="text" placeholder="Usuario">
+                    <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula">
                     <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña">
                 </div>
-                <input type="submit" class="boton animation-right-input" value="Ingresar">
+                <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
             </form>
         </div>
     </div>
+    <script src="<?= ROOT ?>/assets/js/login.js"></script>
 </body>
 
 </html>
