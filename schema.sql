@@ -16,7 +16,7 @@ CREATE TABLE "users" (
 ) WITH (oids = false);
 
 INSERT INTO "users" ("ci", "first_name", "last_name", "email", "password", "registration_date", "status", "role")
-VALUES ('29756468', 'Christian', 'Rincon', 'christian.daniel.ve@gmail.com', NULL, now(), 'active', 'admin');
+VALUES ('29756468', 'Christian', 'Rincon', 'christian.daniel.ve@gmail.com', 'HxvOTr8x92JAZzwfO10Bmu2B.DapiwV5zq7WpGi', now(), 'active', 'admin');
 
 <?php
     $arr['password'] = password_hash('insertar aqui la contraseña', PASSWORD_BCRYPT, ['cost'=> 15]);
