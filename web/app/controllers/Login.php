@@ -23,6 +23,11 @@ class Login extends Controller
     {
         $auth = new Auth;
         $login = $auth->auth($_POST);
-
+        if ($login['session']) {
+            $_SESSION['session'] = $login['session'];
+            $_SESSION['user'] = $login['user'];
+            $_SESSION['role'] = $login['role'];
+            $this->view('dashboard');
+        }
     }
 }

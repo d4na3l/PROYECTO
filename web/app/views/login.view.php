@@ -22,6 +22,7 @@
                 <div class="usuario">
                     <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula">
                     <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña">
+                    <button id="showPass">MOSTRAR CONTRASEÑA</button>
                 </div>
                 <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
             </form>
