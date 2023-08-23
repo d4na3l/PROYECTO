@@ -8,7 +8,7 @@ class Login extends Controller
 
         if (empty($_GET['url']) || $_GET['url'] != 'login') {
             location('login');
-        }elseif(isset($_SESSION['session'])){
+        } elseif (isset($_SESSION['session'])) {
             location('dashboard');
         }
         // Section vendría siendo la primera parte de la URL, es decir la ruta principal.
@@ -22,6 +22,7 @@ class Login extends Controller
     public function login()
     {
         $auth = new Auth;
-        $auth->auth($_POST);
+        $login = $auth->auth($_POST);
+
     }
 }
