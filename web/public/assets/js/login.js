@@ -5,12 +5,22 @@ $("document").ready(() => {
     let passwordErrors;
 
     $("input[name='ci']").on("input", (e) => {
-        ciErrors = [];
         ciValue = $(e.target).val().replace(/\D/g, "");
         $(e.target).val(ciValue);
+
+        ciErrors = [];
         if (!Number($(e.target).val())) {
             ciErrors.push("Este campo solo debe ser llenado con números");
-            console.log("This is ci errors:", ciErrors);
+
+            if (!$(e.target).next("ul").length) {
+                const ul = $("<ul>").addClass("ciContainerErrors");
+                $(e.target).after(ul);
+            }
+
+            ciErrors.forEach((error) => {
+                const li = $("<li>").text(error);
+                $(".usuario").find("ul.ciContainerErrors").append(li);
+            });
         }
     });
 
