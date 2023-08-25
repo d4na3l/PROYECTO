@@ -5,26 +5,33 @@ $("document").ready(() => {
     let passwordErrors;
 
     $("input[name='ci']").on("input", (e) => {
+        const regexNum = /[\d]{7,}/;
+
         ciValue = $(e.target).val().replace(/\D/g, "");
         $(e.target).val(ciValue);
 
         ciErrors = [];
-        if (!Number($(e.target).val())) {
-            ciErrors.push("Este campo solo debe ser llenado con números");
+        if (!Number($(e.target).val()) || !regexNum.test($(e.target).val())) {
+            ciErrors.push("Ingrese un número de cédula válido");
+        }
 
+        if (ciErrors.length) {
             if (!$(e.target).next("ul").length) {
                 const ul = $("<ul>").addClass("ciContainerErrors");
                 $(e.target).after(ul);
+            } else {
+                $(e.target).next("ul.ciContainerErrors").empty();
             }
-
             ciErrors.forEach((error) => {
                 const li = $("<li>").text(error);
                 $(".usuario").find("ul.ciContainerErrors").append(li);
             });
+        } else {
+            $(e.target).next("ul.ciContainerErrors").remove();
         }
     });
 
-    $("input[name='password']").on("input", () => {
+    $("input[name='password']").on("input", (e) => {
         passwordValue = $("input[name='password']").val();
 
         const regexUpperCase = /(?=.*[A-Z])/;
@@ -62,9 +69,29 @@ $("document").ready(() => {
         }
 
         console.log("This is password erros", passwordErrors);
-        // Puedes ver el arrego de passwordErrors en consola del navegador
+        if (passwordErrors.length) {
+            if (!$("input[name='password']").next("ul").length) {
+                const ul = $("<ul>").addClass("passwordContainerErrors");
+                $("input[name='password']").after(ul);
+            } else {
+                $("input[name='password']")
+                    .next("ul.passwordContainerErrors")
+                    .empty();
+            }
+            passwordErrors.forEach((error) => {
+                const li = $("<li>").text(error);
+                $(".usuario").find("ul.passwordContainerErrors").append(li);
+            });
+        } else {
+            $("input[name='password']")
+                .next("ul.passwordContainerErrors")
+                .remove();
+        }
+    });
 
-        /* haz que los elementos de passwordErrors se impriman en la vista del login, en algun modal. Ve si puedes implementarlo
+    // Ya puedse visualizar el control de errores de usuario desde el navegador, como es netural tienes que agregarle css y hacer lo necesario pa que no entorpezca
+
+    /* haz que los elementos de passwordErrors se impriman en la vista del login, en algun modal. Ve si puedes implementarlo
 
                         - La validaciones previstas aseguran que no se pueda enviar el formulario si los campos no estan llenos
                         - Tampoco se pueden ingresar dentro de campo de cedulas otro caracter que no sea numero
@@ -74,13 +101,14 @@ $("document").ready(() => {
 
                         Estas validaciones solo nos ayuarán
                         */
-    });
 
     $("#showPass")
         .mousedown((e) => {
+            e.preventDefault();
             $('input[name="password"]').attr("type", "text");
         })
         .mouseup((e) => {
+            e.preventDefault();
             $('input[name="password"]').attr("type", "password");
         });
 
