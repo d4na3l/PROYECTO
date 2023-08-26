@@ -5,12 +5,11 @@ class Auth
     public function auth($post)
     {
         if (!is_numeric($post['ci'])) {
-            $error = array(
+            return array(
                 'session' => false,
-                'status' => '',
+                'status' => 'unknown',
                 'description' => 'Ingresar sólo números en el campo de cédula',
             );
-            return $error;
         }
         $arr['ci'] = $post['ci'];
         $login = $this->first($arr);
@@ -18,14 +17,13 @@ class Auth
             if ($login->status === 'active') {
                 $hashedPassword = $login->password;
                 if (password_verify($post['password'], $hashedPassword)) {
-                    $loginAuth = array(
+                    return array(
                         'session' => true,
                         'id' => $login->id,
                         'user' => $login->ci,
                         'role' => $login->role,
                         'status' => $login->status,
                     );
-                    return $loginAuth;
                 } else {
                     $error = array(
                         'session' => false,

@@ -29,10 +29,10 @@ class App
         $filename = "../app/controllers/" . ucfirst($main) . ".php";
         if (file_exists($filename)) {
             // Cargamos el controlador.
-            if (!isset($_SESSION['session'])) {
-                $main = 'login';
+            if (!isset($_SESSION['session']) || $main == 'signup') {
+                $main = $main != 'signup' ? 'login' : $main;
                 require "../app/controllers/" . ucfirst($main) . ".php";
-                $this->controller = ucfirst('login');
+                $this->controller = ucfirst($main);
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $this->method = 'login';
                 }

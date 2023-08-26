@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/login.css">
     <link rel=" icon" href="<?= ROOT ?>/assets/img/logo.png">
-    <title>CM Chacao - Login</title>
+    <title>CM Chacao - Sign Up</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 
@@ -17,19 +17,21 @@
             <img class="logo" src="<?= ROOT ?>/assets/img/logo.png" alt="Logo institucional">
         </div>
         <div class="container animation-right">
-            <h1 class="section__title animation-right">Login</h1>
-            <form id="loginForm" method="POST" autocomplete='off'>
+            <h1 class="section__title animation-right">Sign Up</h1>
+            <a href="<?= ROOT ?>/login">Back</a>
+            <form id="signupForm" method="POST" autocomplete='off'>
                 <div class="usuario">
-                    <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula">
+                    <input class="form animation-right-input" name='first_name' type="text" placeholder="Primer nombre">
+                    <input class="form animation-right-input" name='last_name' type="text" placeholder="Primer nombre">
                     <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña">
+                    <input class="form animation-right-input" name='verify_password' type="password" placeholder="Repetir contraseña">
+                    <input class="form animation-right-input" name='email' type="email" placeholder="Correo electrónico">
                 </div>
-                <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
+                <input id='signupInput' type="submit" class="boton animation-right-input" value="Registrar">
             </form>
-            <a href="<?= ROOT ?>/signup">Registrarse</a>
-            <a href="#">Recuperar contraseña</a>
         </div>
     </div>
-    <script src="<?= ROOT ?>/assets/js/login.js"></script>
+    <script src="<?= ROOT ?>/assets/js/signup.js"></script>
 </body>
 
 </html>

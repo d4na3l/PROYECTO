@@ -13,3 +13,7 @@ function location($path)
     header('Location: ' . ROOT . '/' . $path);
     exit;
 }
+
+function response($res){
+    // code
+}

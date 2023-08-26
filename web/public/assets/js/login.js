@@ -102,16 +102,6 @@ $("document").ready(() => {
                         Estas validaciones solo nos ayuarán
                         */
 
-    $("#showPass")
-        .mousedown((e) => {
-            e.preventDefault();
-            $('input[name="password"]').attr("type", "text");
-        })
-        .mouseup((e) => {
-            e.preventDefault();
-            $('input[name="password"]').attr("type", "password");
-        });
-
     $("#loginForm").submit((e) => {
         if (
             !ciValue ||
