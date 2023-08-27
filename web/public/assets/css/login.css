@@ -100,6 +100,7 @@ h1{
 }
 
 .container{
+    padding: var(--mb-1);
     margin-top: 25vh;
     width: 25rem;
     height: auto;
@@ -150,6 +151,11 @@ h1{
     background: var(--first-color-alt);
 }
 
+.container .boton:disabled{
+    background-color: rgb(229, 229, 229);
+    cursor: not-allowed;
+}
+
 .animation-left{
     animation: left 2s;
 }
@@ -182,6 +188,47 @@ h1{
     100% {transform: translateX(0);}
 }
 
+.container .a{
+    display: flex;
+    font-size: var(--normal-font-size);
+    border-radius: .5rem;
+    border-style: none;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--body-color);
+    margin-bottom: var(--mb-0-75);
+}
+
+.container .a:hover{
+    text-decoration: underline;
+}
+
+.ciContainerErrors{
+    display: flex;
+    width: 20rem;
+    padding: var(--mb-1);
+    padding-left: var(--mb-2);
+    background-color: hsla(56, 100%, 50%, 0.25);
+    border-radius: .5rem;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.passwordContainerErrors{
+    display: flex;
+    width: 100vh;
+    padding: var(--mb-1);
+    padding-left: var(--mb-2);
+    background-color: hsla(56, 100%, 50%, 0.25);
+    border-radius: .5rem;
+    border-color: yellow 24px;
+    justify-content: left;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 @media screen and (max-width: 920px){
     .container-hidden{
         display: none;
@@ -190,7 +237,11 @@ h1{
     .container{
         margin-top: 30vh;
         margin-bottom: 32vh;
-    }    
+    }
+
+    .passwordContainerErrors{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 360px){
@@ -204,6 +255,10 @@ h1{
     }
 
     .usuario .form{
+        width: 12rem;
+    }
+
+    .ciContainerErrors{
         width: 12rem;
     }
 }
