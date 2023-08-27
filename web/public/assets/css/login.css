@@ -132,6 +132,14 @@ h1{
     margin-bottom: var(--mb-0-25);
 }
 
+.showPass{
+    position: relative;
+}
+
+.showPass span{
+    margin: 0 12px;
+}
+
 .container .boton{
     text-decoration: none;
     cursor: pointer;
