@@ -25,8 +25,8 @@
                 </div>
                 <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
             </form>
-            <a href="<?= ROOT ?>/signup">Registrarse</a>
-            <a href="#">Recuperar contraseña</a>
+            <a class="a" href="<?= ROOT ?>/signup">Registrarse</a>
+            <a class="a" href="#">Recuperar contraseña</a>
         </div>
     </div>
     <script src="<?= ROOT ?>/assets/js/login.js"></script>
