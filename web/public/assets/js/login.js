@@ -1,3 +1,14 @@
+function ocultarPassword(){
+    const checkbox = document.getElementById('checkbox'),
+        password = document.getElementById('password');
+
+    if(checkbox.checked == true){
+        password.type = "text";
+    } else {
+        password.type = "password";
+    }
+}
+
 $("document").ready(() => {
     let ciValue;
     let passwordValue;
