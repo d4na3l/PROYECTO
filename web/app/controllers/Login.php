@@ -27,7 +27,7 @@ class Login extends Controller
         if (!$login['session']) {
             show(json_encode($login));
             if ($login['status'] === 'pending') {
-                $this->view('register');
+                return $this->view('signup');
             }
             $this->view('login');
         } else {
