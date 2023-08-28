@@ -9,4 +9,7 @@ class Signup extends Controller
         }
         $this->view('signup');
     }
+    public function signup($post){
+        
+    }
 }

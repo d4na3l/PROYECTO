@@ -118,7 +118,7 @@ $("document").ready(() => {
                     password: passwordValue,
                 },
                 success: (res) => {
-                    console.log("conectado");
+                    // alert(JSON.parse(res));
                 },
                 error: () => {
                     console.log("Ha ocurrido un error durante la ejecución");

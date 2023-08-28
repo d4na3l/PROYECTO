@@ -25,17 +25,16 @@ class Login extends Controller
         $login = $auth->auth($_POST);
 
         if (!$login['session']) {
-            show(json_encode($login));
             if ($login['status'] === 'pending') {
-                return $this->view('signup');
+                $this->view('signup');
+            } else {
+                return json_encode($login);
             }
-            $this->view('login');
         } else {
             $_SESSION['session'] = $login['session'];
             $_SESSION['user'] = $login['user'];
             $_SESSION['role'] = $login['role'];
-            show(json_encode($login));
-            $this->view('dashboard');
+            location('dashboard');
         }
     }
 }

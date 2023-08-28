@@ -11,7 +11,7 @@
 <body>
     <h1>View file not found</h1>
     <h2>404 ERROR</h2>
-    <button><a href="<?= ROOT ?>/dashboard">Back home</a></button>
+    <a href="<?= ROOT ?>/dashboard">Back home</a>
 </body>
 
 </html>

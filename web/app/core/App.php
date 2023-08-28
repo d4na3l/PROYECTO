@@ -30,25 +30,30 @@ class App
         if (file_exists($filename)) {
             // Cargamos el controlador.
             if (!isset($_SESSION['session']) || $main == 'signup') {
-                $main = $main != 'signup' ? 'login' : $main;
+                $main = ($main != 'signup') ? 'login' : $main;
                 require "../app/controllers/" . ucfirst($main) . ".php";
                 $this->controller = ucfirst($main);
-                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    $this->method = 'login';
-                }
+
             } else {
                 require $filename;
                 // Asignamos el controlador por defecto, al controlador de la coincidencia del archivo.
                 $this->controller = ucfirst($main);
-                if ($this->controller == 'Logout') {
-                    $this->method = 'logout';
-                }
             }
         } else {
 
             $filename = "../app/controllers/_404.php";
             require $filename;
             $this->controller = '_404';
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && $this->controller == 'Login') {
+            $this->method = 'login';
+        }
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && $this->controller == 'Signup') {
+            $this->method = 'Signup';
+        }
+        if ($this->controller == 'Logout') {
+            $this->method = 'logout';
         }
         // Llamamos al controlador con la clase de la coincidencia, como el método de los controladores solo existe el index para extraer las vistas, no hay lógica para cambiar de método.
         $controller = new $this->controller;
