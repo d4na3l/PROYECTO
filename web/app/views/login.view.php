@@ -21,12 +21,17 @@
             <form id="loginForm" method="POST" autocomplete='off'>
                 <div class="usuario">
                     <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula">
-                    <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña">
+                    <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña" id="password">
+                    <div class="showPass">
+                        <input type="checkbox" name="checkbox" id="checkbox" onchange="ocultarPassword()">
+                        <span>Mostrar Contraseña</span>
+                    </div>
+                    
                 </div>
                 <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
             </form>
-            <a href="<?= ROOT ?>/signup">Registrarse</a>
-            <a href="#">Recuperar contraseña</a>
+            <a class="a" href="<?= ROOT ?>/signup">Registrarse</a>
+            <a class="a" href="#">Recuperar contraseña</a>
         </div>
     </div>
     <script src="<?= ROOT ?>/assets/js/login.js"></script>

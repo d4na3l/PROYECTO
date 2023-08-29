@@ -1,3 +1,14 @@
+function ocultarPassword(){
+    const checkbox = document.getElementById('checkbox'),
+        password = document.getElementById('password');
+
+    if(checkbox.checked == true){
+        password.type = "text";
+    } else {
+        password.type = "password";
+    }
+}
+
 $("document").ready(() => {
     let ciValue;
     let passwordValue;
@@ -6,6 +17,7 @@ $("document").ready(() => {
 
     $("input[name='ci']").on("input", (e) => {
         const regexNum = /[\d]{7,}/;
+        const botonDisabled = document.getElementById('loginInput');
 
         ciValue = $(e.target).val().replace(/\D/g, "");
         $(e.target).val(ciValue);
@@ -25,9 +37,11 @@ $("document").ready(() => {
             ciErrors.forEach((error) => {
                 const li = $("<li>").text(error);
                 $(".usuario").find("ul.ciContainerErrors").append(li);
+                botonDisabled.disabled = true;
             });
         } else {
             $(e.target).next("ul.ciContainerErrors").remove();
+            botonDisabled.disabled = false;
         }
     });
 
@@ -39,6 +53,7 @@ $("document").ready(() => {
         const regexNumberCase = /(?=.*\d)/;
         const regexSymbolCase = /(?=.*[.;*(/$&)])/;
         const regexCatchRange = /[\w.;*(/$&)]{8,}/;
+        const botonDisabled = document.getElementById('loginInput');
 
         passwordErrors = [];
 
@@ -81,11 +96,13 @@ $("document").ready(() => {
             passwordErrors.forEach((error) => {
                 const li = $("<li>").text(error);
                 $(".usuario").find("ul.passwordContainerErrors").append(li);
+                botonDisabled.disabled = true;
             });
         } else {
             $("input[name='password']")
                 .next("ul.passwordContainerErrors")
                 .remove();
+                botonDisabled.disabled = false;
         }
     });
 

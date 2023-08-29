@@ -13,13 +13,9 @@
 
 <body>
     <div class="section">
-        <div class="container container-hidden animation-left">
-            <img class="logo" src="<?= ROOT ?>/assets/img/logo.png" alt="Logo institucional">
-        </div>
         <div class="container animation-right">
             <h1 class="section__title animation-right">Sign Up</h1>
-            <a href="<?= ROOT ?>/login">Back</a>
-            <form id="signupForm" method="POST" autocomplete='off'>
+            <form id="loginForm" method="POST" autocomplete='off'>
                 <div class="usuario">
                     <input class="form animation-right-input" name='first_name' type="text" placeholder="Primer nombre">
                     <input class="form animation-right-input" name='last_name' type="text" placeholder="Primer nombre">
@@ -27,11 +23,12 @@
                     <input class="form animation-right-input" name='verify_password' type="password" placeholder="Repetir contraseña">
                     <input class="form animation-right-input" name='email' type="email" placeholder="Correo electrónico">
                 </div>
-                <input id='signupInput' type="submit" class="boton animation-right-input" value="Registrar">
+                <input id='loginInput' type="submit" class="boton animation-right-input" value="Registrar">
             </form>
+            <a class="a" href="<?= ROOT ?>/login">Volver</a>
         </div>
     </div>
-    <script src="<?= ROOT ?>/assets/js/signup.js"></script>
+    <script src="<?= ROOT ?>/assets/js/login.js"></script>
 </body>
 
 </html>
