@@ -11,12 +11,10 @@
 </head>
 
 <body>
-    <h1>View file not found</h1>
-    <h2>404 ERROR</h2>
-    <a href="<?= ROOT ?>/dashboard">Back home</a>
-    <h1 class="section__title">View file not found</h1>
-    <h2 class="section__subtitle">404 ERROR</h2>
-    <a href="<?= ROOT ?>/dashboard">Back home</a>
+    <a href="<?= ROOT ?>/dashboard">
+        <h1 class="section__title">View file not found</h1>
+        <h2 class="section__subtitle">404 ERROR</h2>
+    </a>
 </body>
 
 </html>

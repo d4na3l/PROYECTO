@@ -24,4 +24,7 @@ class Controller
             }
         }
     }
+    public function funtionality($algo){
+        
+    }
 }

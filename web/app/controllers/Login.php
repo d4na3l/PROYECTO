@@ -5,14 +5,13 @@ class Login extends Controller
     // Metodo para seleccinar la vista enseñarla.
     public function index($section)
     {
-
         if (empty($_GET['url']) || $_GET['url'] != 'login') {
             location('login');
         } elseif (isset($_SESSION['session'])) {
             location('dashboard');
         }
         // Section vendría siendo la primera parte de la URL, es decir la ruta principal.
-        $section = preg_replace('/[^a-zA-Z0-9\/_-]/', '', $section);
+        $section =  
         $viewPath = $section;
 
         // Llamamos al método view de la clase Controller
@@ -23,18 +22,17 @@ class Login extends Controller
     {
         $auth = new Auth;
         $login = $auth->auth($_POST);
+        show($login);
 
         if (!$login['session']) {
-            if ($login['status'] === 'pending') {
-                $this->view('signup');
+            if ($login['status'] == 'pending') {
+                return $this->view('signup');
             } else {
-                return json_encode($login);
+                return $this->view('login');
             }
         } else {
-            $_SESSION['session'] = $login['session'];
-            $_SESSION['user'] = $login['user'];
-            $_SESSION['role'] = $login['role'];
-            location('dashboard');
+            $_SESSION = $login;
+            return $this->view('dashboard');
         }
     }
 }

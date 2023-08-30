@@ -26,7 +26,7 @@
                         <input type="checkbox" name="checkbox" id="checkbox" onchange="ocultarPassword()">
                         <span>Mostrar Contraseña</span>
                     </div>
-                    
+
                 </div>
                 <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
             </form>
@@ -34,7 +34,7 @@
             <a class="a" href="#">Recuperar contraseña</a>
         </div>
     </div>
-    <script src="<?= ROOT ?>/assets/js/login.js"></script>
+    <!-- <script src="<?= ROOT ?>/assets/js/login.js"></script> -->
 </body>
 
 </html>

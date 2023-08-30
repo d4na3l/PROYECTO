@@ -33,7 +33,6 @@ class App
                 $main = ($main != 'signup') ? 'login' : $main;
                 require "../app/controllers/" . ucfirst($main) . ".php";
                 $this->controller = ucfirst($main);
-
             } else {
                 require $filename;
                 // Asignamos el controlador por defecto, al controlador de la coincidencia del archivo.
@@ -50,7 +49,7 @@ class App
             $this->method = 'login';
         }
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && $this->controller == 'Signup') {
-            $this->method = 'Signup';
+            $this->method = 'signup';
         }
         if ($this->controller == 'Logout') {
             $this->method = 'logout';
