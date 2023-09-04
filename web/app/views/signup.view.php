@@ -24,7 +24,7 @@
                     <input class="form animation-right-input" name='verify_password' type="password" placeholder="Repetir contraseña">
                     <input class="form animation-right-input" name='email' type="email" placeholder="Correo electrónico">
                 </div>
-                <input id='signupInput' type="submit" class="boton animation-right-input" value="Registrar">
+                <input id='loginInput' type="submit" class="boton animation-right-input" value="Registrar">
             </form>
             <a class="a" href="<?= ROOT ?>/login">Volver</a>
         </div>
