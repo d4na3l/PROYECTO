@@ -11,7 +11,7 @@ class Login extends Controller
             location('dashboard');
         }
         // Section vendría siendo la primera parte de la URL, es decir la ruta principal.
-        $section =  
+        $section =
         $viewPath = $section;
 
         // Llamamos al método view de la clase Controller
@@ -21,7 +21,7 @@ class Login extends Controller
     public function login()
     {
         $auth = new Auth;
-        $login = $auth->auth($_POST);
+        $login = $auth->login($_POST);
         show($login);
 
         if (!$login['session']) {
