@@ -10,8 +10,6 @@ class Login extends Controller
         } elseif (isset($_SESSION['session'])) {
             location('dashboard');
         }
-        // Section vendría siendo la primera parte de la URL, es decir la ruta principal.
-        $section =
         $viewPath = $section;
 
         // Llamamos al método view de la clase Controller
@@ -22,11 +20,10 @@ class Login extends Controller
     {
         $auth = new Auth;
         $login = $auth->login($_POST);
-        show($login);
 
         if (!$login['session']) {
             if ($login['status'] == 'pending') {
-                return $this->view('signup');
+                location('signup');
             } else {
                 return $this->view('login');
             }

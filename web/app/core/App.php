@@ -54,6 +54,7 @@ class App
         if ($this->controller == 'Logout') {
             $this->method = 'logout';
         }
+        
         // Llamamos al controlador con la clase de la coincidencia, como el método de los controladores solo existe el index para extraer las vistas, no hay lógica para cambiar de método.
         $controller = new $this->controller;
         // Llamamos a la clase de la coincidencia, con el método de "coincidencia", con los parámetros extraídos, por ahora, de la URL

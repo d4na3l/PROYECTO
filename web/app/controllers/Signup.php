@@ -13,9 +13,14 @@ class Signup extends Controller
     public function signup($post)
     {
         $auth = new Auth;
-        $login = $auth->signup($_POST);
-        show($login);
+        $signup = $auth->signup($_POST);
+        // show($signup);
 
-        $this->view('signup');
+        if (!$signup['register']) {
+            if($signup['status'] == 'active'){
+                location('login');
+            }
+            $this->view('signup');
+        }
     }
 }
