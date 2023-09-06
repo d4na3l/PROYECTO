@@ -7,6 +7,9 @@ function show($stuff)
     print_r($stuff);
     echo "</pre>";
 }
+function showError($stuff){
+    
+}
 
 function location($path)
 {

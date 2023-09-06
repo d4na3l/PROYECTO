@@ -18,13 +18,10 @@
             <form id="signupForm" method="POST" autocomplete='off'>
                 <div class="usuario">
                     <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula de identidad">
-                    <input class="form animation-right-input" name='first_name' type="text" placeholder="Primer nombre">
-                    <input class="form animation-right-input" name='last_name' type="text" placeholder="Primer apellido">
                     <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña">
                     <input class="form animation-right-input" name='verify_password' type="password" placeholder="Repetir contraseña">
-                    <input class="form animation-right-input" name='email' type="email" placeholder="Correo electrónico">
                 </div>
-                <input id='loginInput' type="submit" class="boton animation-right-input" value="Registrar">
+                <input id='loginInput' type="submit" class="boton animation-right-input" value="Enviar">
             </form>
             <a class="a" href="<?= ROOT ?>/login">Volver</a>
         </div>

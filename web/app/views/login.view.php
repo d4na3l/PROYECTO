@@ -33,7 +33,7 @@
             <a class="a" href="#">Recuperar contraseña</a>
         </div>
     </div>
-    <!-- <script src="<?= ROOT ?>/assets/js/login.js"></script> -->
+    <script src="<?= ROOT ?>/assets/js/login.js"></script>
 </body>
 
 </html>

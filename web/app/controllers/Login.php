@@ -25,11 +25,14 @@ class Login extends Controller
             if ($login['status'] == 'pending') {
                 location('signup');
             } else {
-                return $this->view('login');
+                header('Content-Type: application/json');
+                echo json_encode($login);
+                exit;
+                $this->view('login');
             }
         } else {
             $_SESSION = $login;
-            return $this->view('dashboard');
+            $this->view('dashboard');
         }
     }
 }
