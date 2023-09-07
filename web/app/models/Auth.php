@@ -72,7 +72,7 @@ class Auth
                 $user = $this->first($arr);
                 if (!empty($user)) {
                     if ($user->status === 'pending') {
-                        if (preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\w.;*\/$&]{8}$/', $post['password'])) {
+                        if (preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\w.;*\/$&]{8,}$/', $post['password'])) {
                             if ($post['password'] === $post['verify_password']) {
                                 return array(
                                     'register' => true,

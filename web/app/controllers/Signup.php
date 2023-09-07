@@ -15,7 +15,7 @@ class Signup extends Controller
     {
         $auth = new Auth;
         $signup = $auth->signup($_POST);
-
+        // show($signup);
         if (!$signup['register']) {
             if ($signup['status'] == 'active') {
                 location('login');
