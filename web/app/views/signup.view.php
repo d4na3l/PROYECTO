@@ -17,8 +17,9 @@
             <h1 class="section__title animation-right">Sign Up</h1>
             <form id="loginForm" method="POST" autocomplete='off'>
                 <div class="usuario">
-                    <input class="form animation-right-input" name='first_name' type="text" placeholder="Primer nombre">
+                    <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula de identidad">
                     <input class="form animation-right-input" name='last_name' type="text" placeholder="Primer nombre">
+                    <input class="form animation-right-input" name='last_name' type="text" placeholder="Primer apellido">
                     <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña">
                     <input class="form animation-right-input" name='verify_password' type="password" placeholder="Repetir contraseña">
                     <input class="form animation-right-input" name='email' type="email" placeholder="Correo electrónico">

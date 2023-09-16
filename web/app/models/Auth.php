@@ -37,7 +37,7 @@ class Auth
                 $error = array(
                     'session' => false,
                     'status' => $login->status,
-                    'description' => 'Crear formulario de usuario',
+                    'description' => 'Su usuario aún no ha sido registrado',
                 );
                 return $error;
             } else {
