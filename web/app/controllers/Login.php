@@ -21,18 +21,19 @@ class Login extends Controller
         $auth = new Auth;
         $login = $auth->login($_POST);
 
+        $error = (json_encode($login));
         if (!$login['session']) {
+            // $_SESSION['errors'];
             if ($login['status'] == 'pending') {
-                location('signup');
+                $this->view('signup');
             } else {
-                header('Content-Type: application/json');
-                echo json_encode($login);
-                exit;
                 $this->view('login');
             }
         } else {
             $_SESSION = $login;
-            $this->view('dashboard');
+            location('dashboard');
         }
+        // header('Content-Type: application/json');
+        // exit;
     }
 }

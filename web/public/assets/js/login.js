@@ -83,7 +83,6 @@ $("document").ready(() => {
             );
         }
 
-        console.log("This is password erros", passwordErrors);
         if (passwordErrors.length) {
             if (!$("input[name='password']").next("ul").length) {
                 const ul = $("<ul>").addClass("passwordContainerErrors");
@@ -122,18 +121,18 @@ $("document").ready(() => {
                     password: passwordValue,
                 },
                 success: (res) => {
-                    console.log(res);
-                    if (res.session) {
-                        location.href = "https://localhost/public/dashboard";
-                        console.log(res);
-                    } else {
-                        location.href = "http://localhost/public/login";
-                        console.log(res.description);
-                    }
+                    console.log('Todo salió como estaba previsto: ', res);
+                    // if (res.session) {
+                    //     location.href = "https://localhost/public/dashboard";
+                    //     console.log(res);
+                    // } else {
+                    //     location.href = "http://localhost/public/login";
+                    //     console.log(res.description);
+                    // }
                 },
                 error: () => {
-                    console.log("Algo salió mal");
-                    location.href = "http://localhost/public/404";
+                    console.log("Todo salió mal a la verga");
+                    // location.href = "http://localhost/public/404";
                 },
             });
         }

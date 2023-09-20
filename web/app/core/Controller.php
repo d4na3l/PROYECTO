@@ -4,7 +4,7 @@
 class Controller
 {
     // Método para cargar las vistas.
-    public function view($name)
+    public function view($name, $response = [])
     {
         $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
 
@@ -24,7 +24,7 @@ class Controller
             }
         }
     }
-    public function funtionality($algo){
-        
+    public function responses($res){
+
     }
 }
