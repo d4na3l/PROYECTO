@@ -1,8 +1,8 @@
-function ocultarPassword(){
-    const checkbox = document.getElementById('checkbox'),
-        password = document.getElementById('password');
+function ocultarPassword() {
+    const checkbox = document.getElementById("checkbox"),
+        password = document.getElementById("password");
 
-    if(checkbox.checked == true){
+    if (checkbox.checked == true) {
         password.type = "text";
     } else {
         password.type = "password";
@@ -17,7 +17,7 @@ $("document").ready(() => {
 
     $("input[name='ci']").on("input", (e) => {
         const regexNum = /[\d]{7,}/;
-        const botonDisabled = document.getElementById('loginInput');
+        const botonDisabled = document.getElementById("loginInput");
 
         ciValue = $(e.target).val().replace(/\D/g, "");
         $(e.target).val(ciValue);
@@ -52,8 +52,8 @@ $("document").ready(() => {
         const regexLowerCase = /(?=.*[a-z])/;
         const regexNumberCase = /(?=.*\d)/;
         const regexSymbolCase = /(?=.*[.;*(/$&)])/;
-        const regexCatchRange = /[\w.;*(/$&)]{8,}/;
-        const botonDisabled = document.getElementById('loginInput');
+        const regexCatchRange = /[\w.;*(/$&)]{8}/;
+        const botonDisabled = document.getElementById("loginInput");
 
         passwordErrors = [];
 
@@ -83,7 +83,6 @@ $("document").ready(() => {
             );
         }
 
-        console.log("This is password erros", passwordErrors);
         if (passwordErrors.length) {
             if (!$("input[name='password']").next("ul").length) {
                 const ul = $("<ul>").addClass("passwordContainerErrors");
@@ -102,22 +101,9 @@ $("document").ready(() => {
             $("input[name='password']")
                 .next("ul.passwordContainerErrors")
                 .remove();
-                botonDisabled.disabled = false;
+            botonDisabled.disabled = false;
         }
     });
-
-    // Ya puedse visualizar el control de errores de usuario desde el navegador, como es netural tienes que agregarle css y hacer lo necesario pa que no entorpezca
-
-    /* haz que los elementos de passwordErrors se impriman en la vista del login, en algun modal. Ve si puedes implementarlo
-
-                        - La validaciones previstas aseguran que no se pueda enviar el formulario si los campos no estan llenos
-                        - Tampoco se pueden ingresar dentro de campo de cedulas otro caracter que no sea numero
-                        - He decidido que las contraseñas a ingresar deban tener todas las condideraciones previstas anteriormente (es decir, que hay que tomar las mismas previsiones para los registros de usuarios)
-
-                        Ademas, como el boton de ingresar esta deshabilitado mientras no se cumplan ninguna de las condiciones, seria exclenete cambiar los colores del boton a rojo, quitar la autorizacion del mouse a interactuar con el submit. Cuandos se cumplan las condiciones, el submit deberia volver a su estado base.
-
-                        Estas validaciones solo nos ayuarán
-                        */
 
     $("#loginForm").submit((e) => {
         if (
@@ -135,10 +121,18 @@ $("document").ready(() => {
                     password: passwordValue,
                 },
                 success: (res) => {
-                    // alert(JSON.parse(res));
+                    console.log('Todo salió como estaba previsto: ', res);
+                    // if (res.session) {
+                    //     location.href = "https://localhost/public/dashboard";
+                    //     console.log(res);
+                    // } else {
+                    //     location.href = "http://localhost/public/login";
+                    //     console.log(res.description);
+                    // }
                 },
                 error: () => {
-                    console.log("Ha ocurrido un error durante la ejecución");
+                    console.log("Todo salió mal a la verga");
+                    // location.href = "http://localhost/public/404";
                 },
             });
         }

@@ -33,7 +33,6 @@ class App
                 $main = ($main != 'signup') ? 'login' : $main;
                 require "../app/controllers/" . ucfirst($main) . ".php";
                 $this->controller = ucfirst($main);
-
             } else {
                 require $filename;
                 // Asignamos el controlador por defecto, al controlador de la coincidencia del archivo.
@@ -50,11 +49,12 @@ class App
             $this->method = 'login';
         }
         if ($_SERVER['REQUEST_METHOD'] == 'POST' && $this->controller == 'Signup') {
-            $this->method = 'Signup';
+            $this->method = 'signup';
         }
         if ($this->controller == 'Logout') {
             $this->method = 'logout';
         }
+        
         // Llamamos al controlador con la clase de la coincidencia, como el método de los controladores solo existe el index para extraer las vistas, no hay lógica para cambiar de método.
         $controller = new $this->controller;
         // Llamamos a la clase de la coincidencia, con el método de "coincidencia", con los parámetros extraídos, por ahora, de la URL

@@ -16,6 +16,9 @@
         <div class="container container-hidden animation-left">
             <img class="logo" src="<?= ROOT ?>/assets/img/logo.png" alt="Logo institucional">
         </div>
+        <?php if (!empty($error)) : ?>
+            <div class="error-message"><?= $error ?></div>
+        <?php endif; ?>
         <div class="container animation-right">
             <h1 class="section__title animation-right">Login</h1>
             <form id="loginForm" method="POST" autocomplete='off'>
@@ -26,7 +29,6 @@
                         <input type="checkbox" name="checkbox" id="checkbox" onchange="ocultarPassword()">
                         <span>Mostrar Contraseña</span>
                     </div>
-                    
                 </div>
                 <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
             </form>
