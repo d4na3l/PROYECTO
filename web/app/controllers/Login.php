@@ -21,7 +21,6 @@ class Login extends Controller
         $auth = new Auth;
         $login = $auth->login($_POST);
 
-        $error = (json_encode($login));
         if (!$login['session']) {
             // $_SESSION['errors'];
             if ($login['status'] == 'pending') {
