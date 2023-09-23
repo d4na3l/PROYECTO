@@ -107,7 +107,6 @@ h1,h2,h3{
 .none{
     display: none;
 }
-
 /*======================== LAYOUT NAVBAR ============================*/
 /* ======= Top =============*/
 .navbar__section{
@@ -267,3 +266,93 @@ h1,h2,h3{
     top: 90%;
 }
 /*======================== DASHBOARD ============================*/
+.dashboard h1{
+    margin: 16px;
+}
+
+.dashboard h2, .dashboard h3{
+    margin-left: 32px;
+}
+
+/*======== Mantenimiento - Usuario ==========*/
+.mantenimiento .table__title{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 32px;
+}
+
+.mantenimiento table{
+    display: block;
+    border: solid rgb(58, 58, 58) 1px;
+    border-radius: 12px;
+    margin: 16px;
+    box-shadow: 1px 6px 8px;
+}
+
+.mantenimiento table tr{
+    display: block;
+    justify-content: space-around;
+    border-bottom: solid gray 1px;
+}
+
+.mantenimiento table th, .mantenimiento table td{
+    padding: 8px 8px;
+    width: 13.5vw;
+    height: auto;
+    text-align: center;
+}
+
+.mantenimiento table .td-input{
+    border-radius: 4px;
+    padding: 6px;
+    width: 100%;
+    height: auto;
+}
+
+.mantenimiento .table__title .search{
+    font-size: var(--font-medium);
+    padding: 0 10px;
+    width: auto;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+}
+
+.mantenimiento .registro table button, .mantenimiento .table__title button{
+    cursor: pointer;
+    padding: 8px 8px;
+    width: 130px;
+    height: auto;
+    border-radius: 12px;
+    border: transparent;
+    background-color: var(--first-color-lighter);
+    font-size: 18px;
+    transition: .25s;
+}
+
+.mantenimiento .table__title button{
+    width: 32px;
+    cursor: pointer;
+    color: black;
+    background-color: transparent;
+}
+
+.mantenimiento .registro table button:hover{
+    background-color: var(--first-color);
+    color: white;
+}
+
+.mantenimiento .table__title .table__button{
+    width: 16px;
+}
+
+.mantenimiento table .table__button{
+    width: 32px;
+    cursor: pointer;
+    margin: 0 12px;
+    color: black;
+}
+
+.mantenimiento .table__title form{
+    border: solid var(--gray-color) 1px;
+    border-radius: 12px;
+}

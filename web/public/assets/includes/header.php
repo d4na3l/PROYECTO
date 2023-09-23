@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= ROOT ?>/assets/css/navbar.css">
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/style.css">
     <link rel="icon" href="<?= ROOT ?>/assets/img/logo.png">
     <title>CM Chacao</title>
@@ -55,13 +54,13 @@
                             </div>
                             <ul class="list__show">
                                 <li class="list__inside">
-                                    <a href="<?= ROOT ?>/dashboard/client" class="side__link">Usuarios</a>
+                                    <a href="<?= ROOT ?>/dashboard/usuario" class="side__link">Usuarios</a>
                                 </li>
                                 <li class="list__inside">
-                                    <a href="#" class="side__link">Ingreso</a>
+                                    <a href="<?= ROOT ?>/mantenimiento/ingreso" class="side__link">Ingreso</a>
                                 </li>
                                 <li class="list__inside">
-                                    <a href="#" class="side__link">Egreso</a>
+                                    <a href="<?= ROOT ?>/mantenimiento/egreso" class="side__link">Egreso</a>
                                 </li>
                             </ul>
                         </li>
