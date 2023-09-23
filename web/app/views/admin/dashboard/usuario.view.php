@@ -2,7 +2,6 @@
 
 <div class="dashboard">
     <div class="mantenimiento">
-        <h1>Mantenimiento - Usuario</h1>
         <div class="registro">
             <h2>Nuevo Usuario</h2>
             <form id="" method="POST" autocomplete='off'>
@@ -33,7 +32,7 @@
             </form>
         </div>
         <div class="table__title">
-            <h2>Usuarios Registrados</h2>
+            <h2 class="section__subtitle">Usuarios Registrados</h2>
             <form action="#">
                 <input type="search" class="search">
                 <button><img src="<?= ROOT ?>/assets/svg/search.svg" class="table__button" alt=""></button>
@@ -87,7 +86,7 @@
                     <td><span>24933180</span></td>
                     <td><span>Venezuela</span></td>
                     <td><span>01000185354996</span></td>
-                    <td><span>N/A</span></td>
+                    <td><span>Ahorro</span></td>
 
                     <!-- Al igual que en el formulario, la etiqueta <a> cumple la misma funcion,
                         con la diferencia de editar o borrar directamente la informacion.
@@ -95,8 +94,8 @@
                         Del mismo modo puede ser reemplazado por un boton.-->
 
                     <td>
-                        <a href="#"><img src="<?= ROOT ?>/assets/svg/edit.svg" class="table__button" alt=""></a>
-                        <a href="#"><img src="<?= ROOT ?>/assets/svg/delete.svg" class="table__button" alt=""></a>
+                        <a href="#"><img src="<?= ROOT ?>/assets/svg/edit.svg" class="table__button" alt="Editar"></a>
+                        <a href="#"><img src="<?= ROOT ?>/assets/svg/delete.svg" class="table__button" alt="Eliminar"></a>
                     </td>
                 </tr>
                 <tr>
@@ -105,7 +104,7 @@
                     <td><span>24933180</span></td>
                     <td><span>Venezuela</span></td>
                     <td><span>01000185354996</span></td>
-                    <td><span>N/A</span></td>
+                    <td><span>Corriente</span></td>
                     <td>
                         <a href="#"><img src="<?= ROOT ?>/assets/svg/edit.svg" class="table__button" alt=""></a>
                         <a href="#"><img src="<?= ROOT ?>/assets/svg/delete.svg" class="table__button" alt=""></a>
@@ -117,7 +116,7 @@
                     <td><span>24933180</span></td>
                     <td><span>Venezuela</span></td>
                     <td><span>01000185354996</span></td>
-                    <td><span>N/A</span></td>
+                    <td><span>Ahorro</span></td>
                     <td>
                         <a href="#"><img src="<?= ROOT ?>/assets/svg/edit.svg" class="table__button" alt=""></a>
                         <a href="#"><img src="<?= ROOT ?>/assets/svg/delete.svg" class="table__button" alt=""></a>
