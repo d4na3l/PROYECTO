@@ -24,7 +24,13 @@
                             <td><input type="text" class="td-input" name="cedula" id="" required></td>
                             <td><input type="text" class="td-input" name="banco" id="" required></td>
                             <td><input type="text" class="td-input" name="ncuenta" id="" required></td>
-                            <td><input type="text" class="td-input" name="ca" id="" required></td>
+                            <td>
+                                <select class="td-input" name="tcuenta" id="" required>
+                                    <option value="" active>Seleccione</option>
+                                    <option value="Ahorro">Ahorro</option>
+                                    <option value="Corriente">Corriente</option>
+                                </select>
+                            </td>
                             <td><button>Guardar</button></td>
                         </tr>
                     </tbody>
