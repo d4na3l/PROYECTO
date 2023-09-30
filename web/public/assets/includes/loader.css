@@ -1,4 +1,4 @@
-@import url(style.css);
+@import url(../css/style.css);
 
 body{
     background-color: var(--first-color-lighter);
@@ -31,12 +31,12 @@ body{
     left: 37px;
     width: 6px;
     height: 18px;
-    border-radius: 20%;
+    border-radius: 32px;
     background-color: var(--first-color);
 }
 
 .lds-spinner div:nth-child(1){
-    transform: rotate(30deg);
+    transform: rotate(0deg);
     animation-delay: -1.1s;
 }
 
