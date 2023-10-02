@@ -16,9 +16,9 @@ class Signup extends Controller
         $auth = new Auth;
         $signup = $auth->signup($_POST);
         // show($signup);
-        if (!$signup['register']) {
+        if (!$signup['signup']) {
             if ($signup['status'] == 'active') {
-                location('login');
+                $this->view('login');
             } else {
                 $this->view('signup');
             }
@@ -28,7 +28,7 @@ class Signup extends Controller
                 'status' => $signup['status']
             );
             $this->update($signup['id'], $arr);
-            location('login');
+            $this->view('login');
         }
     }
 }

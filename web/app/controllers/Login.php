@@ -1,18 +1,20 @@
 <?php
-// Controlador para acceder a las vistas pertenecientes al dashboard
 class Login extends Controller
 {
-    // Metodo para seleccinar la vista enseñarla.
+    private function isAuthenticated()
+    {
+        return isset($_SESSION['session']);
+    }
+
     public function index($section)
     {
-        if (empty($_GET['url']) || $_GET['url'] != 'login') {
-            location('login');
-        } elseif (isset($_SESSION['session'])) {
+        if ($this->isAuthenticated()) {
             location('dashboard');
         }
+        if (empty($_GET['url']) || $_GET['url'] != 'login') {
+            location('login');
+        }
         $viewPath = $section;
-
-        // Llamamos al método view de la clase Controller
         $this->view($viewPath);
     }
 
@@ -20,11 +22,12 @@ class Login extends Controller
     {
         $auth = new Auth;
         $login = $auth->login($_POST);
-
+        header('Content-Type: application/json');
+        echo json_encode($login);
+        exit;
         if (!$login['session']) {
-            // $_SESSION['errors'];
             if ($login['status'] == 'pending') {
-                $this->view('signup');
+                location('signup');
             } else {
                 $this->view('login');
             }
@@ -32,7 +35,6 @@ class Login extends Controller
             $_SESSION = $login;
             location('dashboard');
         }
-        // header('Content-Type: application/json');
-        // exit;
+        // show($login); // Descomenta esto solo para propósitos de depuración
     }
 }

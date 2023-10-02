@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <a href="<?= ROOT ?>/dashboard">
+    <a href="<?= ROOT ?>/<?= isset($_SESSION['session']) ? 'dashboard' : 'login' ?>">
         <h1 class="section__title">View file not found</h1>
         <h2 class="section__subtitle">404 ERROR</h2>
     </a>
