@@ -26,7 +26,7 @@
             <a class="a" href="<?= ROOT ?>/login">Volver</a>
         </div>
     </div>
-    <!-- <script src="<?= ROOT ?>/assets/js/login.js"></script> -->
+    <script src="<?= ROOT ?>/assets/js/signup.js"></script>
 </body>
 
 </html>

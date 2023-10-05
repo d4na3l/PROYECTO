@@ -22,6 +22,11 @@ class Login extends Controller
     {
         $auth = new Auth;
         $login = $auth->login($_POST);
+        try {
+            //code...
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
         header('Content-Type: application/json');
         echo json_encode($login);
         exit;
