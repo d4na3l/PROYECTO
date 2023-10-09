@@ -22,23 +22,16 @@ class Login extends Controller
     {
         $auth = new Auth;
         $login = $auth->login($_POST);
-        try {
-            //code...
-        } catch (\Throwable $th) {
-            //throw $th;
-        }
-        header('Content-Type: application/json');
-        echo json_encode($login);
-        exit;
+
         if (!$login['session']) {
             if ($login['status'] == 'pending') {
-                location('signup');
+                response($login, 'signup');
             } else {
-                $this->view('login');
+                response($login, 'login');
             }
         } else {
             $_SESSION = $login;
-            location('dashboard');
+            response($login, 'dashboard');
         }
         // show($login); // Descomenta esto solo para propósitos de depuración
     }

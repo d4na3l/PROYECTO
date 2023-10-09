@@ -17,7 +17,14 @@ function location($path)
     header('Location: ' . ROOT . '/' . $path);
 }
 
-function response($res)
+function response($res, $redirect)
 {
-    // code
+    try {
+        header('Content-Type: application/json');
+        echo json_encode($res);
+        exit;
+    } catch (\Throwable $th) {
+        location($redirect);
+    }
+
 }
