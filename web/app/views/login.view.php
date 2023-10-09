@@ -24,10 +24,12 @@
             <form id="loginForm" method="POST" autocomplete='off'>
                 <div class="usuario">
                     <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula">
-                    <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña" id="password">
-                    <div class="showPass">
-                        <input type="checkbox" name="checkbox" id="checkbox" onchange="ocultarPassword()">
-                        <span>Mostrar Contraseña</span>
+                    <div class="showPass animation-right-input">
+                        <input class="form" name='password' type="password" placeholder="Contraseña" id="password" onchange="ocultarOjo()">
+                        <div class="div-checkbox">
+                            <input class="none" type="checkbox" name="checkbox" id="checkbox" onchange="ocultarPassword()">
+                            <label id="" for="checkbox"></label>
+                        </div>
                     </div>
                 </div>
                 <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
