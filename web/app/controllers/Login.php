@@ -33,6 +33,5 @@ class Login extends Controller
             $_SESSION = $login;
             response($login, 'dashboard');
         }
-        // show($login); // Descomenta esto solo para propósitos de depuración
     }
 }

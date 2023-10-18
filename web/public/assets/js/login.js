@@ -15,3 +15,24 @@ const ci = document.getElementsByName("ci")[0],
 const form = document.getElementById("loginForm");
 formValidation(form, ci, password, loginInput);
 
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    fetch("login", {
+        method: "POST",
+        body: new FormData(form),
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.session) {
+                alert("Sesión iniciada con éxito!");
+                location.href = "dashboard";
+            } else {
+                alert(data.description);
+            }
+        })
+        .catch((error) => {
+            location.href = "404";
+            console.log(error);
+        });
+});
