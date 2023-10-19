@@ -18,9 +18,9 @@ class Signup extends Controller
         // show($signup);
         if (!$signup['signup']) {
             if ($signup['status'] == 'active') {
-                $this->view('login');
+                response($signup, 'login');
             } else {
-                $this->view('signup');
+                response($signup, 'signup');
             }
         } else {
             $arr = array(
@@ -28,7 +28,7 @@ class Signup extends Controller
                 'status' => $signup['status']
             );
             $this->update($signup['id'], $arr);
-            $this->view('login');
+            response($signup, 'login');
         }
     }
 }

@@ -4,24 +4,36 @@ export const togglePasswordVisibility = (checkboxID, passwordID) => {
     return (password.type = checkbox.checked ? "text" : "password");
 };
 
-const validateCI = (input) => {
-    const ciValue = input.value.replace(/\D+/g, "").slice(0, 8);
-    input.value = ciValue;
+const validateCI = (ciInput) => {
+    const ciValue = ciInput.value.replace(/\D+/g, "").slice(0, 8);
+    ciInput.value = ciValue;
 };
 
-const inputFieldValidation = (ci, password, loginInput) => {
-    if (!ci.value.length || !password.value.length) {
-        loginInput.disabled = true;
-    } else {
-        loginInput.disabled = false;
-    }
+const inputFieldValidation = (inputFields) => {
+    const { inputSend } = inputFields;
+    const inputQuantity = Object.values(inputFields.inputs).length;
+    const inputValues = Object.values(inputFields.inputs).filter(
+        (x) => x.value
+    ).length;
+
+    inputSend.disabled = inputQuantity === inputValues ? false : true;
 };
-export const formValidation = (formName, ciName, passwordName, loginInput) => {
+
+// const inputFieldValidation = ({ci, password, loginInput, ...attr}) => {
+
+//     if (!ci.value.length || !password.value.length) {
+//         loginInput.disabled = true;
+//     } else {
+//         loginInput.disabled = false;
+//     }
+// };
+export const formValidation = (inputFields) => {
     window.addEventListener("DOMContentLoaded", () => {
-        inputFieldValidation(ciName, passwordName, loginInput);
+        inputFieldValidation(inputFields);
     });
-    formName.addEventListener("input", () => {
+    inputFields.formName.addEventListener("input", () => {
+        const ciName = inputFields.inputs.ci;
         validateCI(ciName);
-        inputFieldValidation(ciName, passwordName, loginInput);
+        inputFieldValidation(inputFields);
     });
 };
