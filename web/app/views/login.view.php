@@ -21,18 +21,13 @@
                 <div class="usuario">
                     <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula">
                     <div class="showPass animation-right-input">
-                        <input class="form" name='password' type="password" placeholder="Contraseña" id="password" onchange="ocultarOjo()">
+                        <input class="form" name='password' type="password" placeholder="Contraseña" id="password">
                         <div class="div-checkbox">
-                            <input class="none" type="checkbox" name="checkbox" id="checkbox" onchange="ocultarPassword()">
+                            <input class="none" type="checkbox" name="password_checkbox" id="checkbox">
                             <label id="" for="checkbox"></label>
                         </div>
-                    <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña" id="password">
-                    <div class="showPass">
-                        <input type="checkbox" name="checkbox" id="checkbox">
-                        <span>Mostrar Contraseña</span>
                     </div>
-                </div>
-                <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
+                    <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
             </form>
             <a class="a" href="<?= ROOT ?>/signup">Registrarse</a>
             <a class="a" href="#">Recuperar contraseña</a>

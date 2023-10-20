@@ -11,11 +11,13 @@ class Signup extends Controller
         $this->view('signup');
     }
 
-    public function signup($post)
+    public function signup()
     {
+        $putData = file_get_contents("php://input");
+        $put = json_decode($putData, true);
+
         $auth = new Auth;
-        $signup = $auth->signup($_POST);
-        // show($signup);
+        $signup = $auth->signup($put);
         if (!$signup['signup']) {
             if ($signup['status'] == 'active') {
                 response($signup, 'login');

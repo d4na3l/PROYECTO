@@ -28,15 +28,20 @@ class App
             require "../app/controllers/_404.php";
             $this->controller = '_404';
         }
+        if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
+            switch ($this->controller) {
 
+                case 'Signup':
+                    $this->method = 'signup';
+                    break;
+            }
+        }
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             switch ($this->controller) {
                 case 'Login':
                     $this->method = 'login';
                     break;
-                case 'Signup':
-                    $this->method = 'signup';
-                    break;
+
                 default:
                     $this->method = 'index';
                     break;

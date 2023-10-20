@@ -1,6 +1,6 @@
-export const togglePasswordVisibility = (checkboxID, passwordID) => {
-    const checkbox = document.getElementById(checkboxID),
-        password = document.getElementById(passwordID);
+export const togglePasswordVisibility = (checkboxName, passwordName) => {
+    const checkbox = document.getElementsByName(checkboxName)[0],
+        password = document.getElementsByName(passwordName)[0];
     return (password.type = checkbox.checked ? "text" : "password");
 };
 
@@ -13,20 +13,12 @@ const inputFieldValidation = (inputFields) => {
     const { inputSend } = inputFields;
     const inputQuantity = Object.values(inputFields.inputs).length;
     const inputValues = Object.values(inputFields.inputs).filter(
-        (x) => x.value
+        (x) => x.value,
     ).length;
 
     inputSend.disabled = inputQuantity === inputValues ? false : true;
 };
 
-// const inputFieldValidation = ({ci, password, loginInput, ...attr}) => {
-
-//     if (!ci.value.length || !password.value.length) {
-//         loginInput.disabled = true;
-//     } else {
-//         loginInput.disabled = false;
-//     }
-// };
 export const formValidation = (inputFields) => {
     window.addEventListener("DOMContentLoaded", () => {
         inputFieldValidation(inputFields);

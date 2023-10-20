@@ -1,17 +1,14 @@
 import { togglePasswordVisibility, formValidation } from "./functions.mjs";
 
 // Login CheckBox logic
-const checkboxID = "checkbox",
-    passwordID = "password";
-const checkbox = document.getElementById(checkboxID);
+const checkboxName = "password_checkbox",
+    passwordName = "password";
+const checkbox = document.getElementsByName(checkboxName)[0];
 checkbox.addEventListener("click", () => {
-    togglePasswordVisibility(checkboxID, passwordID);
+    togglePasswordVisibility(checkboxName, passwordName);
 });
 
 // Login Input logic
-// const ci = document.getElementsByName("ci")[0],
-//     password = document.getElementsByName("password")[0],
-//     loginInput = document.getElementById("loginInput");
 
 const form = {
     formName: document.getElementById("loginForm"),
@@ -33,7 +30,6 @@ form.formName.addEventListener("submit", (event) => {
     })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
             if (data.session) {
                 alert("Sesión iniciada con éxito!");
                 location.href = "dashboard";

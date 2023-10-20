@@ -14,13 +14,13 @@
     <div class="section">
         <div class="container animation-right">
             <h1 class="section__title animation-right">Sign Up</h1>
-            <form id="signupForm" method="POST" autocomplete='off'>
+            <form id="signupForm" method="PUT" autocomplete='off'>
                 <div class="usuario">
                     <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula de identidad">
                     <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña">
                     <input class="form animation-right-input" name='verify_password' type="password" placeholder="Repetir contraseña">
                 </div>
-                <input id='loginInput' type="submit" class="boton animation-right-input" value="Enviar">
+                <input id='signupInput' type="submit" class="boton animation-right-input" value="Enviar">
             </form>
             <a class="a" href="<?= ROOT ?>/login">Volver</a>
         </div>

@@ -8,34 +8,43 @@ const form = {
         password: document.getElementsByName("password")[0],
         password_verify: document.getElementsByName("verify_password")[0],
     },
-    inputSend: document.getElementById("loginInput"),
+    inputSend: document.getElementById("signupInput"),
 };
 
 formValidation(form);
 
-form.formName.addEventListener("submit", (event) => {
+form.formName.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    fetch("signup", {
-        method: "POST",
-        body: new FormData(form.formName),
-    })
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            if (data.signup) {
-                alert("Registro realizado con éxito!");
-                location.href = "login";
-            } else {
-                alert(data.description);
-                if (data.status === "active") location.href = "login";
-            }
-        })
-        .catch((error) => {
-            location.href = "404";
-            console.log(error);
+    const formData = {
+        ci: document.getElementsByName('ci')[0].value,
+        password: document.getElementsByName('password')[0].value,
+        verify_password: document.getElementsByName('verify_password')[0].value
+    };
+
+    try {
+        const response = await fetch("signup", {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
         });
-});
+
+        const data = await response.json();
+
+        if (data.signup) {
+            alert("Registro realizado con éxito!");
+            location.href = "login";
+        } else {
+            alert(data.description);
+            if (data.status === "active") location.href = "login";
+        }
+    } catch (error) {
+        console.error(error);
+        location.href = "404";
+    }
+})
 
 // function ocultarPassword() {
 //     const checkbox = document.getElementById("checkbox"),
