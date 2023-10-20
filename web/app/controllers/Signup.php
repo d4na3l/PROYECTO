@@ -16,11 +16,11 @@ class Signup extends Controller
         $auth = new Auth;
         $signup = $auth->signup($_POST);
         // show($signup);
-        if (!$signup['register']) {
+        if (!$signup['signup']) {
             if ($signup['status'] == 'active') {
-                location('login');
+                response($signup, 'login');
             } else {
-                $this->view('signup');
+                response($signup, 'signup');
             }
         } else {
             $arr = array(
@@ -28,7 +28,7 @@ class Signup extends Controller
                 'status' => $signup['status']
             );
             $this->update($signup['id'], $arr);
-            location('login');
+            response($signup, 'login');
         }
     }
 }

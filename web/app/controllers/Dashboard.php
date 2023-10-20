@@ -2,9 +2,16 @@
 // Controlador para acceder a las vistas pertenecientes al dashboard
 class Dashboard extends Controller
 {
-    // Metodo para seleccinar la vista enseñarla.
+    private function isAuthenticated()
+    {
+        return isset($_SESSION['session']);
+    }
+
     public function index($section, $param)
     {
+        if (!$this->isAuthenticated()) {
+            location('login');
+        }
         if (empty($_GET['url'])) {
             location('dashboard');
         }

@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="<?= ROOT ?>/assets/css/login.css">
     <link rel=" icon" href="<?= ROOT ?>/assets/img/logo.png">
     <title>CM Chacao - Sign Up</title>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -25,8 +24,8 @@
             </form>
             <a class="a" href="<?= ROOT ?>/login">Volver</a>
         </div>
+        <script src="<?= ROOT ?>/assets/js/signup.js" type="module"></script>
     </div>
-    <!-- <script src="<?= ROOT ?>/assets/js/login.js"></script> -->
 </body>
 
 </html>

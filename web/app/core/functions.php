@@ -7,16 +7,22 @@ function show($stuff)
     print_r($stuff);
     echo "</pre>";
 }
-function showError($stuff){
-    
+function showError($stuff)
+{
+    // code
 }
 
 function location($path)
 {
     header('Location: ' . ROOT . '/' . $path);
-    exit;
 }
 
-function response($res){
-    // code
+function response($res, $redirect)
+{
+    try {
+        header('Content-Type: application/json');
+        echo json_encode($res);
+    } catch (\Throwable $th) {
+        location($redirect);
+    }
 }
