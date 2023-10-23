@@ -7,7 +7,7 @@ CREATE SEQUENCE "Client_id_seq" increment by 1 minvalue 1 start with 1 cache 1;
 
 
 CREATE TABLE "users" (
-    "user_id" integer DEFAULT nextval('User_id_seq') NOT NULL,
+    "user_id" integer DEFAULT nextval('"User_id_seq"') NOT NULL,
     "ci" integer NOT null UNIQUE,
     "email" character varying(250) UNIQUE,
     "password" character varying(250),
@@ -18,7 +18,7 @@ CREATE TABLE "users" (
 ) WITH (oids = false);
 
 CREATE TABLE "clients" (
-    "client_id" integer DEFAULT nextval('Client_id_seq') NOT NULL,
+    "client_id" integer DEFAULT nextval('"Client_id_seq"') NOT NULL,
     "user_id" integer NOT NULL,
     "first_name" character varying(250),
     "last_name" character varying(250),

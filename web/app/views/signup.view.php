@@ -14,7 +14,7 @@
     <div class="section">
         <div class="container animation-right">
             <h1 class="section__title animation-right">Sign Up</h1>
-            <form id="signupForm" method="POST" autocomplete='off'>
+            <form id="signupForm" method="PUT" autocomplete='off'>
                 <div class="usuario">
                     <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula de identidad">
                     <input class="form animation-right-input" name='password' type="password" placeholder="Contraseña">

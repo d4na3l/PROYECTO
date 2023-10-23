@@ -13,9 +13,11 @@ class Signup extends Controller
 
     public function signup()
     {
-        $auth = new Auth;
-        $signup = $auth->signup($_POST);
+        $putData = file_get_contents("php://input");
+        $put = json_decode($putData, true);
 
+        $auth = new Auth;
+        $signup = $auth->signup($put);
         if (!$signup['signup']) {
             if ($signup['status'] == 'active') {
                 response($signup, 'login');

@@ -20,12 +20,11 @@ form.formName.addEventListener("submit", async (event) => {
         ci: document.getElementsByName("ci")[0].value,
         password: document.getElementsByName("password")[0].value,
         verify_password: document.getElementsByName("verify_password")[0].value,
-        jsEnabled: "1",
     };
 
     try {
         const response = await fetch("signup", {
-            method: "POST",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -33,7 +32,7 @@ form.formName.addEventListener("submit", async (event) => {
         });
 
         const data = await response.json();
-        console.log(data);
+
         if (data.signup) {
             alert("Registro realizado con éxito!");
             location.href = "login";

@@ -24,7 +24,7 @@ const form = {
 };
 
 formValidation(form);
-jsEnabled("jsEnabled");
+// jsEnabled("jsEnabled");
 
 form.formName.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -44,7 +44,7 @@ form.formName.addEventListener("submit", (event) => {
             }
         })
         .catch((error) => {
-            location.href = "404";
-            // console.log(error);
+            // location.href = "404";
+            console.log(error);
         });
 });
