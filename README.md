@@ -17,6 +17,9 @@ La base de datos funcionara en db:5432;
 
 Tambien podemos manejar un manejador de base de datos básico que se llama Adminer, en el puerto 2000 del localhost.
 
+# SCHEMA.SQL
+Dentro del SCHEMA.SQL se estarán subiendo las estrucutras de base de datos con las que iremos trabajando, asi que una vez empiecen a trabajar con el repo, tengan su entorno configurado ejecuten el script de todo el schema.
+
 # PROYECTO
 Estaremos trabajando con el patron MVC por lo tanto, trataremos de maximizar los recursos que se compartan entre carpetas.
 

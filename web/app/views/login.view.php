@@ -18,7 +18,7 @@
         <div class="container animation-right">
             <h1 class="section__title animation-right">Login</h1>
             <form id="loginForm" method="POST" autocomplete='off'>
-                <input type="hidden" name="jsEnabled" id="jsEnabled" value="0">
+                <!-- <input type="hidden" name="jsEnabled" id="jsEnabled" value="0"> -->
                 <div class="usuario">
                     <input class="form animation-right-input" name='ci' type="text" placeholder="Cédula">
                     <div class="showPass animation-right-input">

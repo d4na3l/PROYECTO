@@ -1,7 +1,7 @@
 import {
     togglePasswordVisibility,
     formValidation,
-    jsEnabled,
+    /*jsEnabled,*/
 } from "./functions.mjs";
 
 // Login CheckBox logic
