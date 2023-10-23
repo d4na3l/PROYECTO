@@ -40,7 +40,7 @@ class Auth
                     $hashedPassword = $user->password;
                     if (password_verify($post['password'], $hashedPassword)) {
                         $data = [
-                            'id' => $user->id,
+                            'id' => $user->user_id,
                             'user' => $user->ci,
                             'role' => $user->role,
                             'status' => $user->status,
@@ -80,8 +80,9 @@ class Auth
                 if (preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[.;*\/$&]){8,}/', $post['password'])) {
                     if ($post['password'] === $post['verify_password']) {
                         $data = [
-                            'id' => $user->id,
+                            'id' => $user->user_id,
                             'password' => password_hash($post['password'], PASSWORD_BCRYPT, ['cost' => 15]),
+                            'role' => $user->role,
                             'status' => 'active',
                         ];
                         return $this->getResult('signup', $data);

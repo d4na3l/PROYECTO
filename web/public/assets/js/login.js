@@ -1,4 +1,8 @@
-import { togglePasswordVisibility, formValidation } from "./functions.mjs";
+import {
+    togglePasswordVisibility,
+    formValidation,
+    jsEnabled,
+} from "./functions.mjs";
 
 // Login CheckBox logic
 const checkboxName = "password_checkbox",
@@ -20,6 +24,7 @@ const form = {
 };
 
 formValidation(form);
+jsEnabled("jsEnabled");
 
 form.formName.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -40,6 +45,6 @@ form.formName.addEventListener("submit", (event) => {
         })
         .catch((error) => {
             location.href = "404";
-            console.log(error);
+            // console.log(error);
         });
 });

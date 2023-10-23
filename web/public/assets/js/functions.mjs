@@ -1,3 +1,8 @@
+export const jsEnabled = (jsEnabledId) =>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById(jsEnabledId).value = "1";
+    });
+
 export const togglePasswordVisibility = (checkboxName, passwordName) => {
     const checkbox = document.getElementsByName(checkboxName)[0],
         password = document.getElementsByName(passwordName)[0];

@@ -16,23 +16,24 @@ formValidation(form);
 form.formName.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const formData = {
-        ci: document.getElementsByName('ci')[0].value,
-        password: document.getElementsByName('password')[0].value,
-        verify_password: document.getElementsByName('verify_password')[0].value
+    let formData = {
+        ci: document.getElementsByName("ci")[0].value,
+        password: document.getElementsByName("password")[0].value,
+        verify_password: document.getElementsByName("verify_password")[0].value,
+        jsEnabled: "1",
     };
 
     try {
         const response = await fetch("signup", {
-            method: "PUT",
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify(formData),
         });
 
         const data = await response.json();
-
+        console.log(data);
         if (data.signup) {
             alert("Registro realizado con éxito!");
             location.href = "login";
@@ -42,9 +43,9 @@ form.formName.addEventListener("submit", async (event) => {
         }
     } catch (error) {
         console.error(error);
-        location.href = "404";
+        // location.href = "404";
     }
-})
+});
 
 // function ocultarPassword() {
 //     const checkbox = document.getElementById("checkbox"),

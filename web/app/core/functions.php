@@ -19,10 +19,11 @@ function location($path)
 
 function response($res, $redirect)
 {
-    try {
+    $valPost = array_key_exists('jsEnabled', $_POST) ? $_POST['jsEnabled'] : '0';
+    if ($valPost === '1') {
         header('Content-Type: application/json');
         echo json_encode($res);
-    } catch (\Throwable $th) {
+    } else {
         location($redirect);
     }
 }

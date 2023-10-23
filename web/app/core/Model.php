@@ -4,7 +4,7 @@ trait Model
 {
     use Database;
 
-    protected $order = 'id';
+    protected $order = 'created_at';
 
     // Lee y retorna todos los datos de la base de datos de la tabla correspondiente en orden de id.
     function read()
@@ -78,8 +78,9 @@ trait Model
     }
 
     // Actualiza datos dentro de la base de datos
-    public function update($id, $data, $id_column = 'id')
+    public function update($id, $data)
     {
+        $id_column = $this->id;
         // Verificamos que sean datos que se pueden manipular
         if (!empty($this->allowedColums)) {
             foreach ($data as $key => $value) {
