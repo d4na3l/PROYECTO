@@ -11,7 +11,7 @@ services:
     depends_on:
       - db
   db:
-    image: postgres
+    image: postgres:15-alpine3.18
     restart: always
     environment:
       POSTGRES_USER: root
