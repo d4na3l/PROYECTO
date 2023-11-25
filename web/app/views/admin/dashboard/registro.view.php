@@ -2,7 +2,7 @@
 
 <div class="panel panel-dashboard">
     <div class="mantenimiento">
-        <h1>Mis Datos</h1>
+        <h2 class="section__subtitle">Mis Datos</h2>
         <table>
             <thead>
                 <tr>
@@ -29,7 +29,7 @@
 <div class="panel panel-registro">
     <div class="mantenimiento">
         <div class="registro">
-            <h1>Registrar Nuevo Usuario</h1>
+            <h2 class="section__subtitle">Registrar Nuevo Usuario</h2>
             <form id="" method="POST" autocomplete='off'>
                 <table>
                     <thead>
