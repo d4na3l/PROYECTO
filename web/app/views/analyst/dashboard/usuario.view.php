@@ -1,9 +1,9 @@
-<?php include(__DIR__ . "/../../../../public/assets/includes/admin_sidebar.php") ?>
+<?php include(__DIR__ . "/../../../../public/assets/includes/analyst_sidebar.php") ?>
 
 <div class="dashboard">
     <div class="mantenimiento">
         <div class="registro">
-            <h2>Nuevo Cliente</h2>
+            <h2>Nuevo Usuario</h2>
             <form id="" method="POST" autocomplete='off'>
                 <table>
                     <thead>
@@ -38,7 +38,7 @@
             </form>
         </div>
         <div class="table__title">
-            <h2 class="section__subtitle">Clientes Registrados</h2>
+            <h2 class="section__subtitle">Usuarios Registrados</h2>
             <form action="#">
                 <input type="search" class="search">
                 <button><img src="<?= ROOT ?>/assets/svg/search.svg" class="table__button" alt=""></button>

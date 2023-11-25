@@ -267,7 +267,7 @@ h1,h2,h3{
 }
 /*======================== DASHBOARD ============================*/
 body{
-    background-color: var(--first-color-lighter);
+    background-color: white;
 }
 
 .dashboard h1{
@@ -279,6 +279,12 @@ body{
 }
 
 /*======== Mantenimiento - Usuario ==========*/
+.panel{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
 .mantenimiento .registro{
     margin-top: 24px;
 }
@@ -291,18 +297,15 @@ body{
 }
 
 .mantenimiento table{
-    display: block;
-    border: solid rgb(58, 58, 58) 1px;
-    border-radius: 12px;
+    border: solid lightgray 1px;
     margin: 16px;
-    box-shadow: 1px 6px 8px;
     background-color: white;
 }
 
 .mantenimiento table tr{
     display: block;
     justify-content: space-around;
-    border-bottom: solid gray 1px;
+    border-bottom: solid lightgray 1px;
 }
 
 .mantenimiento table th, .mantenimiento table td{
@@ -310,6 +313,10 @@ body{
     width: 13.5vw;
     height: auto;
     text-align: center;
+}
+
+thead{
+    color: var(--first-color-alt);
 }
 
 .mantenimiento table .td-input{
@@ -364,8 +371,7 @@ body{
     width: 16px;
 }
 
-.mantenimiento table .table__button{
-    padding: 3px;
+.mantenimiento table .btn-edit, .mantenimiento table .btn-delete{
     width: 32px;
     cursor: pointer;
     margin: 0 12px;
