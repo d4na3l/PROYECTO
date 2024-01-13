@@ -1,4 +1,4 @@
-<?php include(__DIR__ . "/../../../../public/assets/includes/header.php") ?>
+<?php include(__DIR__ . "/../../../public/assets/includes/header.php") ?>
 
 <div class="dashboard">
     <div class="mantenimiento">
@@ -58,11 +58,11 @@
             </thead>
             <tbody>
 
-                <?php 
-                    //Insertar codigo para hacer consulta a la bd y ver los datos del cliente
-                    //Ejemplo usado con mysqli: 
+                <?php
+                //Insertar codigo para hacer consulta a la bd y ver los datos del cliente
+                //Ejemplo usado con mysqli:
 
-                /* 
+                /*
                     <?php
                         $query = "SELECT * FROM project_u ORDER BY id DESC";
                         $correo_total = mysqli_query($conn, $query);
@@ -134,4 +134,4 @@
     </div>
 </div>
 
-<?php include(__DIR__ . "/../../../../public/assets/includes/footer.php") ?>
+<?php include(__DIR__ . "/../../../public/assets/includes/footer.php") ?>

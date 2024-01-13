@@ -3,12 +3,20 @@
 class Signup extends Controller
 {
     use user;
-    public function index()
+    public function index($section, $param)
     {
         if (isset($_SESSION['session'])) {
             location('dashboard');
         }
-        $this->view('signup');
+        $viewPath = $section;
+
+        // Comprobamos que existan parámetros de la vista.
+        if ($param) {
+            //Añadimos los parámetros de la vista y acomodamos el viewpath a conveniencia.
+            $param = preg_replace('/[^a-zA-Z0-9\/_-]/', '', $param);
+            $viewPath .= '/' . $param;
+        }
+        $this->view($viewPath);
     }
 
     public function signup()

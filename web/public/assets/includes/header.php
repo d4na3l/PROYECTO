@@ -54,33 +54,24 @@
                             </div>
                             <ul class="list__show">
                                 <li class="list__inside">
-                                    <a href="<?= ROOT ?>/dashboard/usuario" class="side__link">Usuarios</a>
-                                </li>
-                                <li class="list__inside">
-                                    <a href="<?= ROOT ?>/mantenimiento/ingreso" class="side__link">Ingreso</a>
-                                </li>
-                                <li class="list__inside">
-                                    <a href="<?= ROOT ?>/mantenimiento/egreso" class="side__link">Egreso</a>
+                                    <a href="<?= ROOT ?>/management/users" class="side__link">Usuarios</a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="list__item">
-                            <a href="<?= ROOT ?>" class="list__button">
-                                <img src="<?= ROOT ?>/assets/svg/ingresos.svg" alt="boton home" class="list__img">
-                                <span class="side__link">Ingresos</span>
-                            </a>
-                        </li>
-                        <li class="list__item">
-                            <a href="<?= ROOT ?>" class="list__button">
-                                <img src="<?= ROOT ?>/assets/svg/egresos.svg" alt="boton home" class="list__img">
-                                <span class="side__link">Egresos</span>
-                            </a>
-                        </li>
-                        <li class="list__item">
-                            <a href="<?= ROOT ?>" class="list__button">
+                        <li class="list__item list__item--click">
+                            <div class="list__button list__button--click">
                                 <img src="<?= ROOT ?>/assets/svg/bank.svg" alt="boton home" class="list__img">
                                 <span class="side__link">Estados Financieros</span>
-                            </a>
+                                <img src="<?= ROOT ?>/assets/svg/arrow-left.svg" alt="" class="list__arrow">
+                            </div>
+                            <ul class="list__show">
+                                <li class="list__inside">
+                                    <a href="<?= ROOT ?>/financial/incomes" class="side__link">Ingresos</a>
+                                </li>
+                                <li class="list__inside">
+                                    <a href="<?= ROOT ?>/financial/expenses" class="side__link">Egresos</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="list__item log-out">
                             <a href="<?= ROOT ?>/logout" class="list__button">

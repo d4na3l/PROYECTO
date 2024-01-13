@@ -2,6 +2,8 @@
 // Controlador para acceder a las vistas pertenecientes al dashboard
 class Dashboard extends Controller
 {
+
+
     private function isAuthenticated()
     {
         return isset($_SESSION['session']);
@@ -15,6 +17,7 @@ class Dashboard extends Controller
         if (empty($_GET['url'])) {
             location('dashboard');
         }
+
         // Section vendría siendo la primera parte de la URL, es decir la ruta principal.
         $section = preg_replace('/[^a-zA-Z0-9\/_-]/', '', $section);
 
@@ -28,5 +31,21 @@ class Dashboard extends Controller
 
         // Llamamos al método view de la clase Controller
         $this->view($viewPath);
+        $this->clientDashboard();
+    }
+
+    private function clientDashboard()
+    {
+        require 'ClientInformation.php';
+        $informationClient = new ClientInformation();
+        $client = $informationClient->clientInf();
+
+        show($client);
+        if (!empty($client)) {
+            require 'FinancialInformation.php';
+            $informationFinancial = new FinancialInformation();
+            $financial_state = $informationFinancial->financialInf($client->client_id);
+            show($financial_state);
+        }
     }
 }
