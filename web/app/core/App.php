@@ -1,8 +1,19 @@
 <?php
 class App
 {
-    private $controller = 'dashboard';
-    private $method = 'index';
+    public function routing()
+    {
+        $objController = $this->loadController();
+        $method = $this->loadMethod($objController);
+
+        $controller = $objController['controller'];
+        $main = $objController['main'] ?? null;
+        $params = $objController['params'] ?? null;
+
+        $controller = new $controller;
+
+        call_user_func_array([$controller, $method], [$main, $params]);
+    }
 
     private function splitURL()
     {
@@ -13,45 +24,56 @@ class App
         return $url;
     }
 
-    public function loadController()
+    private function loadController()
     {
         $url = $this->splitURL();
         $main = is_array($url) ? array_shift($url) : $url;
         $params = trim(implode('/', $url), '/') ?? null;
-        $controllerName = ucfirst($main);
-        $controllerFileName = "../app/controllers/{$controllerName}.php";
+        $controller = ucfirst($main);
+        $controllerFileName = "../app/controllers/{$controller}.php";
 
-        if (file_exists($controllerFileName)) {
-            require $controllerFileName;
-            $this->controller = $controllerName;
-        } else {
+        if (!file_exists($controllerFileName)) {
             require "../app/controllers/_404.php";
-            $this->controller = '_404';
+            $controller = '_404';
+        } else {
+            require $controllerFileName;
         }
-        if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
-            switch ($this->controller) {
+        $obj = ['controller' => $controller, 'main' => $main, 'params' => $params];
+        return $obj;
+    }
 
-                case 'Signup':
-                    $this->method = 'signup';
-                    break;
-            }
-        }
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            switch ($this->controller) {
-                case 'Login':
-                    $this->method = 'login';
-                    break;
+    private function loadMethod($obj)
+    {
+        $main = $obj['main'];
+        $params = $obj['params'];
+        $controller = $obj['controller'];
 
-                default:
-                    $this->method = 'index';
-                    break;
-            }
-        }
-        if (ucfirst($main) === 'Logout') {
-            $this->method = 'logout';
-        }
+        $methodMapping = [
+            '_404' => [
+                'GET' => 'index'
+            ],
+            'Dashboard' => [
+                'GET' => 'index'
+            ],
+            'Login' => [
+                'POST' => 'login',
+                'GET' => 'index'
+            ],
+            'Logout' => [
+                'GET' => 'logout'
+            ],
+            'Signup' => [
+                'PUT' => 'signup',
+                'GET' => 'index'
+            ],
+            'Management' => [
+                'GET' => 'index'
+            ]
+        ];
 
-        $controllerInstance = new $this->controller;
-        call_user_func_array([$controllerInstance, $this->method], [$main, $params]);
+        $request = $_SERVER['REQUEST_METHOD'];
+        $method = $methodMapping[$controller][$request];
+
+        return $method;
     }
 }

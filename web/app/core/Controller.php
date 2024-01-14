@@ -6,7 +6,9 @@ class Controller
     public function view($name)
     {
         $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
-        $filename = $this->getViewFilename($name, $role);
+        $status = isset($_SESSION['role']) ? $_SESSION['status'] : null;
+        $filename = $this->getViewFilename($name, $role, $status);
+
 
         if (file_exists($filename)) {
             require $filename;
@@ -15,10 +17,17 @@ class Controller
         }
     }
 
-    private function getViewFilename($name, $role)
+    private function getViewFilename($name, $role, $status)
     {
         if (isset($_SESSION['session'])) {
-            $filename = "../app/views/{$role}/{$name}.view.php";
+            switch ($status) {
+                case 'active':
+                    $filename = "../app/views/{$role}/{$name}.view.php";
+                    break;
+                default:
+                    $this->load404View();
+                    break;
+            }
         } else {
             $filename = "../app/views/{$name}.view.php";
         }

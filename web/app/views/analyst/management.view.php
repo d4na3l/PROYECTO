@@ -1,9 +1,9 @@
-<?php include(__DIR__ . "/../../../../public/assets/includes/admin_sidebar.php") ?>
+<?php include(__DIR__ . "/../../../public/assets/includes/header.php") ?>
 
 <div class="dashboard">
     <div class="mantenimiento">
         <div class="registro">
-            <h2>Nuevo Cliente</h2>
+            <h2>Nuevo Usuario</h2>
             <form id="" method="POST" autocomplete='off'>
                 <table>
                     <thead>
@@ -38,7 +38,7 @@
             </form>
         </div>
         <div class="table__title">
-            <h2 class="section__subtitle">Clientes Registrados</h2>
+            <h2 class="section__subtitle">Usuarios Registrados</h2>
             <form action="#">
                 <input type="search" class="search">
                 <button><img src="<?= ROOT ?>/assets/svg/search.svg" class="table__button" alt=""></button>
@@ -58,11 +58,11 @@
             </thead>
             <tbody>
 
-                <?php 
-                    //Insertar codigo para hacer consulta a la bd y ver los datos del cliente
-                    //Ejemplo usado con mysqli: 
+                <?php
+                //Insertar codigo para hacer consulta a la bd y ver los datos del cliente
+                //Ejemplo usado con mysqli:
 
-                /* 
+                /*
                     <?php
                         $query = "SELECT * FROM project_u ORDER BY id DESC";
                         $correo_total = mysqli_query($conn, $query);
@@ -100,8 +100,8 @@
                         Del mismo modo puede ser reemplazado por un boton.-->
 
                     <td>
-                        <a href="#"><img src="<?= ROOT ?>/assets/svg/edit.svg" class="table__button btn-edit" alt="Editar"></a>
-                        <a href="#"><img src="<?= ROOT ?>/assets/svg/delete.svg" class="table__button btn-delete" alt="Eliminar"></a>
+                        <a href="#"><img src="<?= ROOT ?>/assets/svg/edit.svg" class="table__button" alt="Editar"></a>
+                        <a href="#"><img src="<?= ROOT ?>/assets/svg/delete.svg" class="table__button" alt="Eliminar"></a>
                     </td>
                 </tr>
                 <tr>
@@ -112,8 +112,8 @@
                     <td><span>01000185354996</span></td>
                     <td><span>Corriente</span></td>
                     <td>
-                        <a href="#"><img src="<?= ROOT ?>/assets/svg/edit.svg" class="table__button btn-edit" alt=""></a>
-                        <a href="#"><img src="<?= ROOT ?>/assets/svg/delete.svg" class="table__button btn-delete" alt=""></a>
+                        <a href="#"><img src="<?= ROOT ?>/assets/svg/edit.svg" class="table__button" alt=""></a>
+                        <a href="#"><img src="<?= ROOT ?>/assets/svg/delete.svg" class="table__button" alt=""></a>
                     </td>
                 </tr>
                 <tr>
@@ -124,8 +124,8 @@
                     <td><span>01000185354996</span></td>
                     <td><span>Ahorro</span></td>
                     <td>
-                        <a href="#"><img src="<?= ROOT ?>/assets/svg/edit.svg" class="table__button btn-edit" alt=""></a>
-                        <a href="#"><img src="<?= ROOT ?>/assets/svg/delete.svg" class="table__button btn-delete" alt=""></a>
+                        <a href="#"><img src="<?= ROOT ?>/assets/svg/edit.svg" class="table__button" alt=""></a>
+                        <a href="#"><img src="<?= ROOT ?>/assets/svg/delete.svg" class="table__button" alt=""></a>
                     </td>
                 </tr>
                 <!-- Fin del ejemplo -->
@@ -134,4 +134,4 @@
     </div>
 </div>
 
-<?php include(__DIR__ . "/../../../../public/assets/includes/footer.php") ?>
+<?php include(__DIR__ . "/../../../public/assets/includes/footer.php") ?>
