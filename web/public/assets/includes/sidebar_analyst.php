@@ -2,9 +2,9 @@
 
 <body>
     <nav class="navbar">
-        <div class="navbar__section">
+    <div class="navbar__section">
             <div class="navbar__backgrond-button">
-                <button href="." class="navbar__brand-button" id="boton-menu-navbar">
+                <button href="." class="navbar__brand-button" id="boton-menu-navbar-left">
                     <img src="<?= ROOT ?>/assets/svg/menu.svg" alt="Logo" class="navbar__menu">
                 </button>
                 <div href="." class="navbar__brand">
@@ -12,15 +12,26 @@
                     <h3 class="navbar__title">CM Chacao</h3>
                 </div>
             </div>
-            <div class="navbar__user">
+            <button href="." class="navbar__brand-button" id="boton-menu-navbar-right">
                 <img src="<? ROOT ?>/public/assets/svg/user-circle.svg" class="navbar__img-user" alt="Logo usuario">
+            </button>
+        </div>
+        <div class="sidebar_profile_background sidebar_profile_hidden navbar__user" id="sider">
+            <div class="sidebar_profile">
+                <div class="side__logo-name">
+                    <div class="navbar__backgrond-button">
+                        <button href="." class="navbar__brand-button" id="boton-menu-sidebar-right">
+                            <img src="<? ROOT ?>/public/assets/svg/user-circle.svg" class="navbar__img-user" alt="Logo usuario">
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="sidebar__background sidebar__hidden" id="side">
+        <div class="sidebar__background sidebar__hidden" id="sidel">
             <div class="sidebar">
                 <div class="side__logo-name">
                     <div class="navbar__backgrond-button">
-                        <button href="." class="navbar__brand-button" id="boton-menu-sidebar">
+                        <button href="." class="navbar__brand-button" id="boton-menu-sidebar-left">
                             <img src="<?= ROOT ?>/assets/svg/menu.svg" alt="Logo" class="navbar__menu">
                         </button>
                         <div href="." class="navbar__brand">

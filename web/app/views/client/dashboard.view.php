@@ -1,4 +1,4 @@
-<?php include(__DIR__ . "/../../../public/assets/includes/client_sidebar.php") ?>
+<?php include(__DIR__ . "/../../../public/assets/includes/sidebar_client.php") ?>
 
 <div class="dashboard">
     <h1>client dashboard</h1>

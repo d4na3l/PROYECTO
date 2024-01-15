@@ -1,4 +1,4 @@
-<?php include(__DIR__ . "/../../../../public/assets/includes/client_sidebar.php") ?>
+<?php include(__DIR__ . "/../../../../public/assets/includes/sidebar_client.php") ?>
 
 <div class="usuario">
     <div class="perfil">
@@ -6,4 +6,4 @@
     </div>
 </div>
 
-<?php include(__DIR__ . "/../../../../public/assets/includes/footer.php") ?>
+<?php include(__DIR__ . "/../../../../../public/assets/includes/footer.php") ?>
