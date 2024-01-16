@@ -27,6 +27,13 @@
                             <input class="none" type="checkbox" name="password_checkbox" id="checkbox">
                             <label id="" for="checkbox"></label>
                         </div>
+                        <dialog class="modalContainer" id="myModal">
+                            <div class="modal-content">
+                                <span class="close">X</span>
+                                <h2>Usuario o contraseña invalida</h2>
+                                <p>Ingrese un usuario o contraseña valida</p>
+                            </div>
+                        </dialog>
                     </div>
                     <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
             </form>

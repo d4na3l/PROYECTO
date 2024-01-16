@@ -1,6 +1,6 @@
 <?php include("header.php") ?>
 
-<body>
+<body onload="myFunction()">
     <nav class="navbar">
     <div class="navbar__section">
             <div class="navbar__backgrond-button">

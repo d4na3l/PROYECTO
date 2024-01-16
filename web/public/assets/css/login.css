@@ -304,3 +304,40 @@ h1{
         width: 12rem;
     }
 }
+
+/*==================== MODAL ====================*/
+.modalContainer::backdrop{
+    background-color: rgb(0,0,0,.5);
+}
+
+.modalContainer{
+    position: relative;
+    top: 35vh;
+    left: 35vw;
+    border-radius: 24px;
+    border: none;
+}
+
+.modalContainer .modal-content{
+    background-color: rgba(255, 65, 65, 0.5);
+    border-radius: 24px;
+    border: solid 3px rgba(255, 0, 0, 0.5);
+    padding: 24px;
+}
+
+.modalContainer .close{
+    display: block;
+    color: white;
+    padding: 4px;
+    float: right;
+    cursor: pointer;
+    border-radius: 24px;
+    font-size: 24px;
+    background-color: rgba(255, 0, 0);
+    transition: all .2s;
+}
+
+.modalContainer .close:hover, .close:focus{
+    color: var(--first-color-lighter);
+    background-color: rgba(255, 0, 0, 0.5);
+}

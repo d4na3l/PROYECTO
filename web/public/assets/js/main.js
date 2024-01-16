@@ -1,3 +1,15 @@
+/*================================ LOADER ==============================*/
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
 /*================================ NAVBAR ==============================*/
 /* Mostrar menu lateral sidebar - left */
 const menuButtonSideLeft = document.getElementById('boton-menu-sidebar-left'),

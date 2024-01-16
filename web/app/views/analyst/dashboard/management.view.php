@@ -1,6 +1,7 @@
-<?php include(__DIR__ . "/../../../public/assets/includes/sidebar_admin.php") ?>
+<?php include(__DIR__ . "/../../../public/assets/includes/sidebar_analyst.php") ?>
 
-<div class="dashboard">
+<div id="loader"></div>
+<div class="dashboard animate-bottom" style="display: none;" id="myDiv">
     <div class="mantenimiento">
         <div class="registro">
             <h2>Nuevo Usuario</h2>

@@ -1,6 +1,6 @@
 <?php include("header.php") ?>
 
-<body>
+<body onload="myFunction()">
     <nav class="navbar">
         <div class="navbar__section">
             <div class="navbar__backgrond-button">
@@ -16,7 +16,7 @@
                 <img src="<? ROOT ?>/public/assets/svg/user-circle.svg" class="navbar__img-user" alt="Logo usuario">
             </button>
         </div>
-        <div class="sidebar_profile_background sidebar_profile_hidden navbar__user" id="sider">
+        <!-- <div class="sidebar_profile_background sidebar_profile_hidden navbar__user" id="sider">
             <div class="sidebar_profile">
                 <div class="side__logo-name">
                     <div class="navbar__backgrond-button">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="sidebar__background sidebar__hidden" id="sidel">
             <div class="sidebar">
                 <div class="side__logo-name">

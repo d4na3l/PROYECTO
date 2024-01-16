@@ -40,6 +40,7 @@ class Dashboard extends Controller
         $informationClient = new ClientInformation();
         $client = $informationClient->clientInf();
 
+
         show($client);
         if (!empty($client)) {
             require 'FinancialInformation.php';

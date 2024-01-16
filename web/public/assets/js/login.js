@@ -23,6 +23,8 @@ const form = {
     inputSend: document.getElementById("loginInput"),
 };
 
+
+
 formValidation(form);
 // jsEnabled("jsEnabled");
 
@@ -39,7 +41,16 @@ form.formName.addEventListener("submit", (event) => {
                 alert("Sesión iniciada con éxito!");
                 location.href = "dashboard";
             } else {
-                alert(data.description);
+                const modal = document.getElementById("myModal");
+                const span = document.getElementsByClassName("close")[0];
+                const body = document.getElementsByTagName("body");
+
+                modal.showModal()
+
+                span.addEventListener("click", ()=> {
+                    modal.close();
+                })
+                // alert(data.description);
                 if (data.status === "pending") location.href = "signup";
             }
         })
