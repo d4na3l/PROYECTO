@@ -46,11 +46,17 @@
                                 <span class="side__link">Inicio</span>
                             </a>
                         </li>
-                        <li class="list__item list__item--click">
+                        <li class="list__item">
+                            <a href="<?= ROOT ?>/dashboard/management" class="list__button">
+                                <img src="<?= ROOT ?>/assets/svg/user.svg" alt="boton gestion de usuario" class="list__img">
+                                <span class="side__link">Gestion de Usuarios</span>
+                            </a>
+                        </li>
+                        <!-- <li class="list__item list__item--click">
                             <div class="list__button list__button--click">
                                 <img src="<?= ROOT ?>/assets/svg/user.svg" alt="" class="list__img">
                                 <a href="<? ROOT ?>/dashboard/management" class="side__link">Gestion de Usuarios</a>
-                            </div>
+                            </div> -->
                             <!-- <ul class="list__show">
                                 <li class="list__inside">
                                     <a href="<?= ROOT ?>/dashboard/usuario" class="side__link">Usuarios</a>
@@ -74,13 +80,13 @@
                                 <img src="<?= ROOT ?>/assets/svg/egresos.svg" alt="boton home" class="list__img">
                                 <span class="side__link">Egresos</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="list__item">
-                            <a href="<?= ROOT ?>" class="list__button">
+                            <a href="<?= ROOT ?>/dashboard/estado_financiero" class="list__button">
                                 <img src="<?= ROOT ?>/assets/svg/bank.svg" alt="boton home" class="list__img">
                                 <span class="side__link">Estados Financieros</span>
                             </a>
-                        </li> -->
+                        </li>
                         <li class="list__item log-out">
                             <a href="<?= ROOT ?>/logout" class="list__button">
                                 <img src="<?= ROOT ?>/assets/svg/log-out.svg" alt="" class="list__img">

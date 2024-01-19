@@ -11,7 +11,8 @@
 </head>
 
 <body>
-    <div class="section">
+    <div id="loader"></div>
+    <div class="section animate-bottom" id="myDiv">
         <div class="container container-hidden animation-left">
             <img class="logo" src="<?= ROOT ?>/assets/img/logo.png" alt="Logo institucional">
         </div>
@@ -36,6 +37,7 @@
                         </dialog>
                     </div>
                     <input id='loginInput' type="submit" class="boton animation-right-input" value="Ingresar">
+                </div>
             </form>
             <a class="a" href="<?= ROOT ?>/signup">Registrarse</a>
             <a class="a" href="#">Recuperar contraseña</a>

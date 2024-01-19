@@ -16,7 +16,7 @@
                 <img src="<? ROOT ?>/public/assets/svg/user-circle.svg" class="navbar__img-user" alt="Logo usuario">
             </button>
         </div>
-        <div class="sidebar_profile_background sidebar_profile_hidden navbar__user" id="sider">
+        <!-- <div class="sidebar_profile_background sidebar_profile_hidden navbar__user" id="sider">
             <div class="sidebar_profile">
                 <div class="side__logo-name">
                     <div class="navbar__backgrond-button">
@@ -26,7 +26,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="sidebar__background sidebar__hidden" id="sidel">
             <div class="sidebar">
                 <div class="side__logo-name">
@@ -46,18 +46,20 @@
                                 <span class="side__link">Inicio</span>
                             </a>
                         </li>
-                        <li class="list__item list__item--click">
+                        <li class="list__item">
+                            <a href="<?= ROOT ?>/dashboard/management" class="list__button">
+                                <img src="<?= ROOT ?>/assets/svg/user.svg" alt="boton gestion de usuario" class="list__img">
+                                <span class="side__link">Gestion de Usuarios</span>
+                            </a>
+                        </li>
+                        <!-- <li class="list__item list__item--click">
                             <div class="list__button list__button--click">
                                 <img src="<?= ROOT ?>/assets/svg/user.svg" alt="" class="list__img">
-                                <span class="side__link">Cliente</span>
-                                <img src="<?= ROOT ?>/assets/svg/arrow-left.svg" alt="" class="list__arrow">
-                            </div>
-                            <ul class="list__show">
-                            <li class="list__inside">
-                                    <a href="<?= ROOT ?>/dashboard/registro" class="side__link">Nuevo registro</a>
-                                </li>
+                                <a href="<? ROOT ?>/dashboard/management" class="side__link">Gestion de Usuarios</a>
+                            </div> -->
+                            <!-- <ul class="list__show">
                                 <li class="list__inside">
-                                    <a href="<?= ROOT ?>/dashboard/usuario" class="side__link">Usuarios clientes</a>
+                                    <a href="<?= ROOT ?>/dashboard/usuario" class="side__link">Usuarios</a>
                                 </li>
                                 <li class="list__inside">
                                     <a href="<?= ROOT ?>/mantenimiento/ingreso" class="side__link">Ingreso</a>
@@ -65,9 +67,9 @@
                                 <li class="list__inside">
                                     <a href="<?= ROOT ?>/mantenimiento/egreso" class="side__link">Egreso</a>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </li>
-                        <li class="list__item">
+                        <!-- <li class="list__item">
                             <a href="<?= ROOT ?>" class="list__button">
                                 <img src="<?= ROOT ?>/assets/svg/ingresos.svg" alt="boton home" class="list__img">
                                 <span class="side__link">Ingresos</span>
@@ -78,7 +80,7 @@
                                 <img src="<?= ROOT ?>/assets/svg/egresos.svg" alt="boton home" class="list__img">
                                 <span class="side__link">Egresos</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="list__item">
                             <a href="<?= ROOT ?>" class="list__button">
                                 <img src="<?= ROOT ?>/assets/svg/bank.svg" alt="boton home" class="list__img">

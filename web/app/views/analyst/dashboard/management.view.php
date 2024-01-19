@@ -1,4 +1,4 @@
-<?php include(__DIR__ . "/../../../public/assets/includes/sidebar_analyst.php") ?>
+<?php include(__DIR__ . "/../../../../public/assets/includes/sidebar_analyst.php") ?>
 
 <div id="loader"></div>
 <div class="dashboard animate-bottom" style="display: none;" id="myDiv">
@@ -135,4 +135,4 @@
     </div>
 </div>
 
-<?php include(__DIR__ . "/../../../public/assets/includes/footer.php") ?>
+<?php include(__DIR__ . "/../../../../public/assets/includes/footer.php") ?>

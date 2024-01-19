@@ -4,6 +4,19 @@ import {
     /*jsEnabled,*/
 } from "./functions.mjs";
 
+var btn = document.querySelector(".boton");
+
+btn.onclick = function() {
+
+    document.getElementById("loader").style.display = "flex";
+    document.getElementById("myDiv").style.display = "none";
+    
+    setTimeout(() => {
+        // alert("Prueba finalizada")
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "flex";
+    }, 5000);
+
 // Login CheckBox logic
 const checkboxName = "password_checkbox",
     passwordName = "password";
@@ -23,8 +36,6 @@ const form = {
     inputSend: document.getElementById("loginInput"),
 };
 
-
-
 formValidation(form);
 // jsEnabled("jsEnabled");
 
@@ -38,7 +49,7 @@ form.formName.addEventListener("submit", (event) => {
         .then((res) => res.json())
         .then((data) => {
             if (data.session) {
-                alert("Sesión iniciada con éxito!");
+                
                 location.href = "dashboard";
             } else {
                 const modal = document.getElementById("myModal");
@@ -59,3 +70,4 @@ form.formName.addEventListener("submit", (event) => {
             console.log(error);
         });
 });
+};
