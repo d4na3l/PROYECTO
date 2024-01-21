@@ -2,6 +2,7 @@
 
 <div id="loader"></div>
 <div class="dashboard animate-bottom" style="display: none;" id="myDiv">
+<section>Informacion del perfil</section>
     <section class="info_client">
         <h1>Cliente</h1>
         <table>

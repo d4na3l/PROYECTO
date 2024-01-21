@@ -2,7 +2,7 @@
 var myVar;
 
 function myFunction() {
-  myVar = setTimeout(showPage, 3000);
+  myVar = setTimeout(showPage, 1500);
 }
 
 function showPage() {
@@ -44,35 +44,35 @@ listElementsLeft.forEach(listElement => {
     })
 })
 
-/* Mostrar menu lateral sidebar - right */
-const menuButtonSideRight = document.getElementById('boton-menu-sidebar-right'),
-    menuButtonNavbarRight = document.getElementById('boton-menu-navbar-right'),
-    menuElementsRight = document.getElementById('sider');
+// /* Mostrar menu lateral sidebar - right */
+// const menuButtonSideRight = document.getElementById('boton-menu-sidebar-right'),
+//     menuButtonNavbarRight = document.getElementById('boton-menu-navbar-right'),
+//     menuElementsRight = document.getElementById('sider');
 
-menuButtonNavbarRight.addEventListener('click', ()=>{
-    menuElementsRight.classList.toggle('sidebar_profile_hidden')
-})
+// menuButtonNavbarRight.addEventListener('click', ()=>{
+//     menuElementsRight.classList.toggle('sidebar_profile_hidden')
+// })
 
-menuButtonSideRight.addEventListener('click', () =>{
-    menuElementsRight.classList.toggle('sidebar_profile_hidden')
-})
+// menuButtonSideRight.addEventListener('click', () =>{
+//     menuElementsRight.classList.toggle('sidebar_profile_hidden')
+// })
 
-/* Mostrar menu de opciones en sidebar */
-let listElementsRight = document.querySelectorAll('.list__button--click');
+// /* Mostrar menu de opciones en sidebar */
+// let listElementsRight = document.querySelectorAll('.list__button--click');
 
-listElementsRight.forEach(listElement => {
+// listElementsRight.forEach(listElement => {
 
-    listElement.addEventListener('click', () => {
+//     listElement.addEventListener('click', () => {
 
-        listElement.classList.toggle('arrow')
+//         listElement.classList.toggle('arrow')
 
-        let height = 0;
-        let menu = listElement.nextElementSibling;
+//         let height = 0;
+//         let menu = listElement.nextElementSibling;
 
-        if(menu.clientHeight == "0"){
-            height = menu.scrollHeight;
-        }
+//         if(menu.clientHeight == "0"){
+//             height = menu.scrollHeight;
+//         }
 
-        menu.style.height = `${height}px`;
-    })
-})
+//         menu.style.height = `${height}px`;
+//     })
+// })

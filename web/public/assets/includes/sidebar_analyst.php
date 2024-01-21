@@ -46,28 +46,29 @@
                                 <span class="side__link">Inicio</span>
                             </a>
                         </li>
-                        <li class="list__item">
+                        <!-- <li class="list__item">
                             <a href="<?= ROOT ?>/dashboard/management" class="list__button">
                                 <img src="<?= ROOT ?>/assets/svg/user.svg" alt="boton gestion de usuario" class="list__img">
                                 <span class="side__link">Gestion de Usuarios</span>
                             </a>
-                        </li>
-                        <!-- <li class="list__item list__item--click">
+                        </li> -->
+                        <li class="list__item list__item--click">
                             <div class="list__button list__button--click">
                                 <img src="<?= ROOT ?>/assets/svg/user.svg" alt="" class="list__img">
-                                <a href="<? ROOT ?>/dashboard/management" class="side__link">Gestion de Usuarios</a>
-                            </div> -->
-                            <!-- <ul class="list__show">
+                                <span class="side__link">Registros</span>
+                                <img src="<?= ROOT ?>/assets/svg/arrow-left.svg" class="list__arrow">
+                            </div>
+                            <ul class="list__show">
                                 <li class="list__inside">
-                                    <a href="<?= ROOT ?>/dashboard/usuario" class="side__link">Usuarios</a>
+                                    <a href="<?= ROOT ?>/dashboard/registro_usuario" class="side__link">Usuarios</a>
                                 </li>
                                 <li class="list__inside">
-                                    <a href="<?= ROOT ?>/mantenimiento/ingreso" class="side__link">Ingreso</a>
+                                    <a href="<?= ROOT ?>/dashboard/registro_cliente" class="side__link">Clientes</a>
                                 </li>
                                 <li class="list__inside">
-                                    <a href="<?= ROOT ?>/mantenimiento/egreso" class="side__link">Egreso</a>
+                                    <a href="<?= ROOT ?>/dashboard/registro_estado_financiero" class="side__link">Estados Financieros</a>
                                 </li>
-                            </ul> -->
+                            </ul>
                         </li>
                         <!-- <li class="list__item">
                             <a href="<?= ROOT ?>" class="list__button">
