@@ -411,7 +411,7 @@ body{
 
 .mantenimiento .table__title{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-right: 32px;
     margin-top: 32px;
 }
@@ -440,6 +440,7 @@ thead{
 }
 
 .mantenimiento table .td-input{
+    border: solid 1px gray;
     padding: 6px;
     width: 100%;
     height: auto;
@@ -513,7 +514,7 @@ thead{
     display: flex;
     justify-content: left;
     margin-top: 28px;
-    padding: 12px;
+    padding: 20px;
 }
 
 .analyst_mantenimiento .registro table tr{
@@ -527,10 +528,11 @@ thead{
 
 .analyst_mantenimiento .registro table th{
     margin-top: 12px;
+    margin-right: 18px;
     padding: 8px 8px;
     width: 6vw;
     height: auto;
-    text-align: center;
+    text-align: left;
 }
 
 .analyst_mantenimiento form{
@@ -540,8 +542,8 @@ thead{
 
 .analyst_mantenimiento .table__title{
     display: flex;
-    justify-content: space-around;
-    margin-right: 32px;
+    justify-content: space-between;
+    margin-right: 16px;
     margin-top: 32px;
 }
 
@@ -560,7 +562,7 @@ thead{
 
 .analyst_mantenimiento table th, .analyst_mantenimiento table td{
     padding: 8px 8px;
-    width: 13.5vw;
+    width: 16vw;
     height: auto;
     text-align: center;
 }
@@ -570,6 +572,7 @@ thead{
 }
 
 .analyst_mantenimiento table .td-input{
+    border: solid 1px gray;
     padding: 6px;
     width: 100%;
     height: auto;
@@ -642,7 +645,7 @@ thead{
 .client__mantenimiento .table__title{
     display: flex;
     justify-content: space-between;
-    margin-right: 32px;
+    margin-right: 16px;
     margin-top: 32px;
 }
 
@@ -671,7 +674,7 @@ thead{
 
 .client__mantenimiento table th, .client__mantenimiento table td{
     padding: 8px 8px;
-    width: 13.5vw;
+    width: 16vw;
     height: auto;
     text-align: center;
 }
@@ -681,6 +684,7 @@ thead{
 }
 
 .client__mantenimiento table .td-input{
+    border: solid 1px gray;
     padding: 6px;
     width: 100%;
     height: auto;

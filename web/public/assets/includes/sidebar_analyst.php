@@ -66,7 +66,7 @@
                                     <a href="<?= ROOT ?>/dashboard/registro_cliente" class="side__link">Clientes</a>
                                 </li>
                                 <li class="list__inside">
-                                    <a href="<?= ROOT ?>/dashboard/registro_estado_financiero" class="side__link">Estados Financieros</a>
+                                    <a href="<?= ROOT ?>/dashboard/registro_estado_financiero" class="side__link">Transacciones</a>
                                 </li>
                             </ul>
                         </li>
@@ -83,7 +83,7 @@
                             </a>
                         </li> -->
                         <li class="list__item">
-                            <a href="<?= ROOT ?>/dashboard/estado_financiero" class="list__button">
+                            <a href="<?= ROOT ?>/dashboard/estados_financieros" class="list__button">
                                 <img src="<?= ROOT ?>/assets/svg/bank.svg" alt="boton home" class="list__img">
                                 <span class="side__link">Estados Financieros</span>
                             </a>
